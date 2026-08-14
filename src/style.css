@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor jumps for the fixed navbar */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-paper-50 text-ink font-sans antialiased;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: theme('colors.petrol.200');
+    color: theme('colors.petrol.900');
+  }
+
+  :focus-visible {
+    outline: none;
+  }
+}
+
+@layer components {
+  /* Short gradient rule echoing the logo's green → violet → blue dandelion */
+  .accent-rule {
+    height: 3px;
+    width: 4rem;
+    border-radius: 9999px;
+    background-image: linear-gradient(
+      90deg,
+      theme('colors.moss.400'),
+      theme('colors.iris.400'),
+      theme('colors.petrol.500')
+    );
+  }
+
+  /* Animated underline for nav links */
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    background-color: theme('colors.petrol.500');
+    transition: transform 0.3s ease;
+  }
+  .link-underline:hover::after,
+  .link-underline.is-active::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Scroll-reveal — activated by useScrollReveal (skipped under reduced-motion) */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
