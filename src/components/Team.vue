@@ -1,5 +1,5 @@
 <template>
-  <section id="team" class="py-24 md:py-32 bg-white">
+  <section id="team" class="py-24 md:py-32 bg-paper-100">
     <div class="max-w-6xl mx-auto px-5 md:px-6">
       <!-- Header -->
       <div class="max-w-2xl mx-auto text-center mb-16" v-bind="headerReveal">
@@ -11,9 +11,8 @@
         </h2>
         <div class="accent-rule mx-auto mt-5"></div>
         <p class="mt-6 text-ink/70 leading-relaxed">
-          Als Paar und als Kolleg:innen bringen wir unterschiedliche Verfahren und viel
-          klinische Erfahrung zusammen – mit einem gemeinsamen Anspruch: Sie wirksam und
-          menschlich zu begleiten.
+          Wir bringen unterschiedliche Verfahren und viel klinische Erfahrung zusammen –
+          mit einem gemeinsamen Anspruch: Sie wirksam und menschlich zu begleiten.
         </p>
       </div>
 
@@ -23,28 +22,19 @@
           v-for="(p, i) in people"
           :key="p.name"
           v-bind="cardReveals[i]"
-          class="rounded-2xl border border-paper-200 bg-paper-50 p-7 md:p-8"
+          class="rounded-2xl border border-paper-200 bg-white p-7 md:p-8"
         >
           <div class="flex flex-col sm:flex-row gap-6">
-            <!-- Portrait or monogram -->
+            <!-- Portrait -->
             <div class="shrink-0 mx-auto sm:mx-0">
               <img
-                v-if="p.photo"
                 :src="p.photo"
                 :alt="`Porträt von ${p.name}`"
-                width="234"
-                height="350"
+                width="640"
+                height="797"
                 class="w-32 h-40 object-cover object-top rounded-xl ring-1 ring-black/5 shadow-sm"
                 loading="eager"
               />
-              <div
-                v-else
-                class="w-32 h-40 rounded-xl flex items-center justify-center bg-gradient-to-br from-petrol-100 via-iris-100 to-moss-100 ring-1 ring-black/5"
-                role="img"
-                :aria-label="`Platzhalter für ${p.name}`"
-              >
-                <span class="font-serif text-3xl font-semibold text-petrol-700">{{ p.initials }}</span>
-              </div>
             </div>
 
             <!-- Intro -->
@@ -58,6 +48,12 @@
                 {{ p.method }}
               </span>
               <p class="mt-4 text-ink/70 leading-relaxed text-[0.95rem]">{{ p.intro }}</p>
+              <a
+                :href="`mailto:${p.email}`"
+                class="link-underline inline-block mt-3 text-sm text-petrol-600 hover:text-petrol-700 break-all"
+              >
+                {{ p.email }}
+              </a>
             </div>
           </div>
 
@@ -68,7 +64,7 @@
               <li
                 v-for="s in p.focus"
                 :key="s"
-                class="text-sm text-ink/75 bg-white border border-paper-200 rounded-full px-3 py-1"
+                class="text-sm text-ink/75 bg-paper-50 border border-paper-200 rounded-full px-3 py-1"
               >
                 {{ s }}
               </li>
@@ -87,11 +83,6 @@
           </div>
         </article>
       </div>
-
-      <p class="text-center text-sm text-ink/45 mt-8" v-bind="noteReveal">
-        <!-- TODO: Foto von Andreas von Loe unter public/images/andreas-von-loe.webp ergänzen -->
-        Ein Foto von Andreas von Loe folgt in Kürze.
-      </p>
     </div>
   </section>
 </template>
@@ -102,14 +93,13 @@ import { useScrollReveal } from '../composables/useScrollReveal'
 const { reveal } = useScrollReveal()
 const headerReveal = reveal()
 const cardReveals = [reveal({ delay: 0 }), reveal({ delay: 120 })]
-const noteReveal = reveal({ delay: 80 })
 
 const people = [
   {
     name: 'Dr. Isabelle von Loe',
-    initials: 'IvL',
-    credentials: 'M.Sc. Psych., Dr. sc. hum. · Psychologische Psychotherapeutin (Approbation 2021)',
+    credentials: 'M.Sc. Psych. Dr. sc. hum. · Psychologische Psychotherapeutin (Approbation 2021)',
     method: 'Tiefenpsychologisch fundiert',
+    email: 'tiefenpsychologie@psychotherapie-vonloe.de',
     tagClass: 'bg-moss-50 text-moss-700',
     dotClass: 'bg-moss-400',
     photo: '/images/isabelle-von-loe.webp',
@@ -120,25 +110,28 @@ const people = [
       'Psychosomatik',
       'Essstörungen',
       'Chronische Schmerzen',
-      'Postpartale Belastungen',
-      'Kinderwunsch',
+      'Postpartale Erkrankungen',
+      'Belastung durch unerfüllten Kinderwunsch',
       'Trauer & Lebenskrisen',
     ],
     cv: [
-      'Promotion in der Psychosomatik des Universitätsklinikums Heidelberg (AG Prof. Schauenburg), magna cum laude',
+      'Ausbildung am Heidelberger Institut für Psychotherapie (HIP)',
+      'Promotion in der Psychosomatik des Universitätsklinikums Heidelberg (AG Prof. Schauenburg)',
+      'Privatklinik Dirmstein',
       'Stationspsychologin Mutter-Kind-Station, PZN Wiesloch',
-      'Psychosomatische Ambulanz & Stationen, Universitätsklinikum Heidelberg',
-      'Zuletzt Praxiszentrum Gaisberg, Heidelberg',
+      'Psychosomatische Ambulanz Bergheim, Station Mitscherlich und Abendklinik Psychosomatik, Universitätsklinikum Heidelberg',
+      'Praxiszentrum Gaisberg in Heidelberg',
+      'Zuletzt Sicherstellungsassistenz in der Praxis von Michael Geldhauser',
     ],
   },
   {
     name: 'Andreas von Loe',
-    initials: 'AvL',
     credentials: 'M.Sc. Psych. · Psychologischer Psychotherapeut (Approbation)',
     method: 'Verhaltenstherapie & Schematherapie',
+    email: 'verhaltenstherapie@psychotherapie-vonloe.de',
     tagClass: 'bg-petrol-50 text-petrol-700',
     dotClass: 'bg-petrol-400',
-    photo: null,
+    photo: '/images/andreas-von-loe.webp',
     intro:
       'Ich arbeite verhaltenstherapeutisch und schematherapeutisch – konkret, gegenwartsbezogen und mit Blick auf tief verankerte Muster. Erfahrung sammelte ich in Psychiatrie, Beratung und Praxis.',
     focus: [
@@ -152,9 +145,9 @@ const people = [
     ],
     cv: [
       'Ausbildung zum Psychologischen Psychotherapeuten am ZPP Heidelberg',
-      'Psychologischer Psychotherapeut (Sicherstellungsassistenz), Praxis Grau, Heidelberg',
       'Psychologe am Berufsbildungswerk Neckargemünd der SRH',
       'Psychiatrie & Psychosomatik, Universitätsklinikum Heidelberg',
+      'Zuletzt Sicherstellungsassistenz in der Praxis von Andrea Grau, Heidelberg',
     ],
   },
 ]

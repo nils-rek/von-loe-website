@@ -5,11 +5,11 @@
         <!-- Brand -->
         <div>
           <div class="flex items-center gap-2.5 mb-4">
-            <img src="/images/mark.webp" alt="" width="36" height="36" class="w-9 h-9 rounded-md bg-white/95 p-0.5" />
+            <PraxisMark class="w-9 h-9 rounded-md bg-white/95 p-1" />
             <span class="font-serif text-xl font-semibold">Psychotherapie von Loe</span>
           </div>
           <p class="text-sm text-paper-100/70 leading-relaxed max-w-xs">
-            Privatpraxis für psychologische Psychotherapie in Heidelberg –
+            Praxis für psychologische Psychotherapie in Heidelberg –
             Dr. Isabelle von Loe &amp; Andreas von Loe.
           </p>
         </div>
@@ -45,9 +45,8 @@
               </router-link>
             </li>
           </ul>
-          <!-- TODO: Praxisadresse ergänzen -->
           <address class="not-italic mt-5 text-paper-100/60 leading-relaxed">
-            [Praxisadresse]<br />
+            Sofienstraße 13<br />
             69115 Heidelberg
           </address>
         </div>
@@ -62,6 +61,7 @@
 
 <script setup>
 import { useRoute, useRouter } from 'vue-router'
+import PraxisMark from './PraxisMark.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -69,9 +69,9 @@ const year = new Date().getFullYear()
 
 const links = [
   { href: '#praxis', label: 'Die Praxis' },
+  { href: '#psychotherapie', label: 'Psychotherapie' },
   { href: '#therapieangebot', label: 'Therapieangebot' },
   { href: '#team', label: 'Wir' },
-  { href: '#wartelisten', label: 'Wartelisten' },
   { href: '#kontakt', label: 'Kontakt' },
 ]
 

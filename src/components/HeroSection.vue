@@ -8,18 +8,16 @@
       <div class="absolute -top-24 -right-24 w-[34rem] h-[34rem] rounded-full bg-petrol-100/50 blur-3xl animate-float-slow"></div>
       <div class="absolute top-1/3 -left-24 w-[26rem] h-[26rem] rounded-full bg-moss-100/40 blur-3xl animate-float"></div>
       <div class="absolute -bottom-20 right-1/4 w-[22rem] h-[22rem] rounded-full bg-iris-100/40 blur-3xl animate-float-delayed"></div>
-      <svg class="absolute top-16 right-8 md:right-24 w-40 h-40 opacity-60 animate-float" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-        <g>
-          <circle cx="30" cy="50" r="4" fill="#7fb079" />
-          <circle cx="42" cy="38" r="4.5" fill="#a487c0" />
-          <circle cx="44" cy="62" r="4.5" fill="#6e97c4" />
-          <circle cx="56" cy="30" r="4" fill="#8e6fb3" />
-          <circle cx="58" cy="70" r="4" fill="#4f7cb0" />
-          <circle cx="20" cy="44" r="3" fill="#a3c99d" />
-          <circle cx="22" cy="58" r="3" fill="#7fb079" />
-          <circle cx="70" cy="40" r="3" fill="#6e97c4" />
-          <circle cx="72" cy="60" r="3" fill="#a487c0" />
-        </g>
+      <svg class="absolute top-20 right-4 md:right-16 w-40 h-40 opacity-60 animate-float" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <circle cx="30" cy="50" r="4" fill="#7fb079" />
+        <circle cx="42" cy="38" r="4.5" fill="#a487c0" />
+        <circle cx="44" cy="62" r="4.5" fill="#6e97c4" />
+        <circle cx="56" cy="30" r="4" fill="#8e6fb3" />
+        <circle cx="58" cy="70" r="4" fill="#4f7cb0" />
+        <circle cx="20" cy="44" r="3" fill="#a3c99d" />
+        <circle cx="22" cy="58" r="3" fill="#7fb079" />
+        <circle cx="70" cy="40" r="3" fill="#6e97c4" />
+        <circle cx="72" cy="60" r="3" fill="#a487c0" />
       </svg>
     </div>
 
@@ -28,14 +26,14 @@
         <!-- Text -->
         <div class="order-2 md:order-1">
           <p class="animate-hero-fade-in text-petrol-600 font-medium tracking-[0.18em] text-xs md:text-sm uppercase mb-5">
-            Privatpraxis für Psychotherapie · Heidelberg
+            Praxis für Psychotherapie · Heidelberg
           </p>
           <h1 class="animate-hero-fade-in-1 font-serif text-5xl md:text-6xl lg:text-7xl font-semibold text-ink leading-[1.05] tracking-tight mb-6">
             Psychotherapie<br />von&nbsp;Loe
           </h1>
           <div class="animate-hero-fade-in-2 accent-rule mb-7"></div>
           <p class="animate-hero-fade-in-2 text-lg md:text-xl text-ink/70 leading-relaxed mb-8 max-w-xl">
-            Ein ruhiger Raum für psychologische Psychotherapie – tiefenpsychologisch
+            Ein geschützter Raum für psychologische Psychotherapie – tiefenpsychologisch
             fundiert und verhaltenstherapeutisch. Für Erwachsene, in Einzel- und
             Gruppentherapie.
           </p>
@@ -48,11 +46,11 @@
               Kontakt aufnehmen
             </a>
             <a
-              href="#wartelisten"
+              href="#therapieangebot"
               class="inline-flex items-center justify-center px-7 py-3.5 border border-petrol-300 text-petrol-700 font-medium rounded-lg hover:bg-petrol-50 hover:border-petrol-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-petrol-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper-50"
-              @click.prevent="scrollTo('#wartelisten')"
+              @click.prevent="scrollTo('#therapieangebot')"
             >
-              Zur Warteliste
+              Therapieangebot ansehen
             </a>
           </div>
         </div>

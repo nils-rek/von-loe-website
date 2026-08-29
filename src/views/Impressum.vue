@@ -25,7 +25,7 @@
           <p>
             Psychotherapie von Loe<br />
             Dr. Isabelle von Loe &amp; Andreas von Loe<br />
-            [Praxisadresse]<br />
+            Sofienstraße 13<br />
             69115 Heidelberg
           </p>
         </section>
@@ -33,8 +33,9 @@
         <section>
           <h2 class="font-serif text-xl font-semibold text-ink mb-2">Kontakt</h2>
           <p>
-            Telefon: [Telefonnummer]<br />
-            E-Mail: [E-Mail-Adresse]
+            Telefon: 0178 5642428<br />
+            E-Mail: tiefenpsychologie@psychotherapie-vonloe.de (Dr. Isabelle von Loe)<br />
+            E-Mail: verhaltenstherapie@psychotherapie-vonloe.de (Andreas von Loe)
           </p>
         </section>
 
@@ -71,7 +72,7 @@
         <section>
           <h2 class="font-serif text-xl font-semibold text-ink mb-2">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
           <p>
-            [Name], [Praxisadresse], 69115 Heidelberg
+            [Name], Sofienstraße 13, 69115 Heidelberg
           </p>
         </section>
 

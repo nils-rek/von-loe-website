@@ -1,5 +1,5 @@
 <template>
-  <section id="therapieangebot" class="py-24 md:py-32 bg-paper-100">
+  <section id="therapieangebot" class="py-24 md:py-32 bg-white">
     <div class="max-w-6xl mx-auto px-5 md:px-6">
       <!-- Header -->
       <div class="max-w-2xl mx-auto text-center mb-16" v-bind="headerReveal">
@@ -23,7 +23,7 @@
           v-for="(a, i) in approaches"
           :key="a.title"
           v-bind="cardReveals[i]"
-          class="group bg-white rounded-2xl p-8 border border-paper-200 border-t-2 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+          class="group bg-paper-50 rounded-2xl p-8 border border-paper-200 border-t-2 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
           :class="a.borderClass"
         >
           <div
@@ -39,7 +39,7 @@
       </div>
 
       <!-- Behandlungsspektrum -->
-      <div class="bg-white rounded-2xl p-8 md:p-10 border border-paper-200" v-bind="spectrumReveal">
+      <div class="bg-paper-50 rounded-2xl p-8 md:p-10 border border-paper-200" v-bind="spectrumReveal">
         <div class="md:flex md:items-baseline md:justify-between mb-6">
           <h3 class="font-serif text-2xl font-semibold text-ink">Behandlungsspektrum</h3>
           <p class="text-sm text-ink/55 mt-1 md:mt-0">Auszug – sprechen Sie uns gern auf Ihr Anliegen an.</p>
@@ -69,7 +69,7 @@ const approaches = [
   {
     title: 'Tiefenpsychologisch fundierte Psychotherapie',
     tag: 'Dr. Isabelle von Loe',
-    text: 'Wir schauen gemeinsam auf innere Konflikte und wiederkehrende Beziehungsmuster, die häufig hinter Beschwerden stehen. Ziel ist, deren Ursprung zu verstehen und Neues möglich zu machen.',
+    text: 'Wir schauen gemeinsam auf innere Konflikte und wiederkehrende Beziehungsmuster, die häufig hinter Beschwerden stehen. Ziel ist, deren Ursprung zu verstehen, neue Bewältigungsmechanismen zu entwickeln und mehr Handlungsspielraum zu gewinnen.',
     borderClass: 'border-t-moss-400',
     iconWrap: 'bg-moss-50 text-moss-600 group-hover:bg-moss-500 group-hover:text-white',
     tagClass: 'text-moss-600',
@@ -78,7 +78,7 @@ const approaches = [
   {
     title: 'Verhaltenstherapie & Schematherapie',
     tag: 'Andreas von Loe',
-    text: 'Ein konkreter, gegenwartsbezogener Ansatz: hilfreiche Denk- und Verhaltensweisen erarbeiten und einüben. Die Schematherapie ergänzt dies um die Arbeit an tief verankerten Mustern.',
+    text: 'Ein konkreter, gegenwartsbezogener Ansatz: hilfreiche Denk- und Verhaltensweisen erarbeiten und einüben. Die Schematherapie ergänzt dies um die Arbeit an tief verankerten Beziehungsmustern.',
     borderClass: 'border-t-petrol-400',
     iconWrap: 'bg-petrol-50 text-petrol-600 group-hover:bg-petrol-600 group-hover:text-white',
     tagClass: 'text-petrol-600',

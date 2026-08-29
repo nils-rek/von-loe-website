@@ -1,3 +1,17 @@
+<!--
+  PARKIERT – diese Sektion ist derzeit nicht in HomePage.vue eingebunden.
+
+  Grund: Isa und Andi haben sich noch nicht auf einen Warteliste-/Formularanbieter
+  festgelegt. Sobald das feststeht:
+    1. Links bzw. Einbettungscode in die drei data-waitlist-embed-Slots setzen
+       (siehe TODO(waitlist embed) weiter unten),
+    2. <Wartelisten /> in src/views/HomePage.vue wieder einhängen – zwischen
+       <Team /> und <Kontakt /> und die Hintergrund-Abfolge der Sektionen
+       (weiss / paper-100 im Wechsel) entsprechend nachziehen,
+    3. den Menuepunkt "Wartelisten" in NavBar.vue und FooterSection.vue ergaenzen,
+    4. den Abschnitt "Warteliste" in views/Datenschutz.vue wieder aufnehmen
+       (siehe Git-Historie) und den genutzten Dienst dort benennen.
+-->
 <template>
   <section id="wartelisten" class="py-24 md:py-32 bg-paper-100">
     <div class="max-w-6xl mx-auto px-5 md:px-6">

@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from './views/HomePage.vue'
 
-const defaultTitle = 'Psychotherapie von Loe | Privatpraxis für Psychotherapie in Heidelberg'
+const defaultTitle = 'Psychotherapie von Loe | Psychotherapeutische Praxis in Heidelberg'
 
 const routes = [
   { path: '/', component: HomePage },

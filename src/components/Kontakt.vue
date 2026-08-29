@@ -12,19 +12,16 @@
         <div class="accent-rule mx-auto mt-5"></div>
         <p class="mt-6 text-ink/70 leading-relaxed">
           Für ein erstes Kennenlernen oder Fragen zum Ablauf erreichen Sie uns telefonisch
-          oder per E-Mail. Für einen Therapieplatz tragen Sie sich bitte zusätzlich in die
-          passende
-          <a href="#wartelisten" class="text-petrol-600 underline underline-offset-2 hover:text-petrol-700" @click.prevent="scrollTo('#wartelisten')">Warteliste</a>
-          ein.
+          oder per E-Mail. Schreiben Sie gern direkt an die Kollegin oder den Kollegen, dessen
+          Verfahren zu Ihrem Anliegen passt – wir melden uns zeitnah zurück.
         </p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 items-start">
         <!-- Contact details -->
         <div class="space-y-4" v-bind="leftReveal">
-          <!-- TODO: echte Telefonnummer eintragen -->
           <a
-            href="tel:+49"
+            href="tel:+491785642428"
             class="group flex items-center gap-4 bg-paper-50 rounded-xl p-5 border border-paper-200 hover:border-petrol-300 hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-petrol-500"
           >
             <span class="w-12 h-12 rounded-full bg-petrol-50 flex items-center justify-center text-petrol-600 group-hover:bg-petrol-600 group-hover:text-white transition-colors shrink-0">
@@ -34,13 +31,14 @@
             </span>
             <span>
               <span class="block text-xs text-ink/50">Telefon</span>
-              <span class="block font-medium text-ink">[Telefonnummer]</span>
+              <span class="block font-medium text-ink">0178 5642428</span>
             </span>
           </a>
 
-          <!-- TODO: echte E-Mail-Adresse eintragen -->
           <a
-            href="mailto:"
+            v-for="m in mailboxes"
+            :key="m.address"
+            :href="`mailto:${m.address}`"
             class="group flex items-center gap-4 bg-paper-50 rounded-xl p-5 border border-paper-200 hover:border-petrol-300 hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-petrol-500"
           >
             <span class="w-12 h-12 rounded-full bg-petrol-50 flex items-center justify-center text-petrol-600 group-hover:bg-petrol-600 group-hover:text-white transition-colors shrink-0">
@@ -48,9 +46,9 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
               </svg>
             </span>
-            <span>
-              <span class="block text-xs text-ink/50">E-Mail</span>
-              <span class="block font-medium text-ink">[E-Mail-Adresse]</span>
+            <span class="min-w-0">
+              <span class="block text-xs text-ink/50">{{ m.label }}</span>
+              <span class="block font-medium text-ink break-all">{{ m.address }}</span>
             </span>
           </a>
 
@@ -65,13 +63,11 @@
               </span>
               <div>
                 <span class="block text-xs text-ink/50 mb-1">Praxis</span>
-                <!-- TODO: Praxisadresse eintragen -->
                 <address class="not-italic font-medium text-ink leading-relaxed">
-                  [Praxisadresse]<br />69115 Heidelberg
+                  Sofienstraße 13<br />69115 Heidelberg
                 </address>
-                <!-- TODO: telefonische Sprechzeiten eintragen -->
                 <p class="text-sm text-ink/55 mt-3">
-                  Telefonische Erreichbarkeit: [Sprechzeiten]
+                  Telefonische Erreichbarkeit: 5 Minuten vor der vollen Stunde
                 </p>
               </div>
             </div>
@@ -106,10 +102,10 @@ const headerReveal = reveal()
 const leftReveal = reveal({ delay: 60 })
 const rightReveal = reveal({ delay: 120 })
 
-function scrollTo(hash) {
-  const el = document.querySelector(hash)
-  if (el) el.scrollIntoView({ behavior: 'smooth' })
-}
+const mailboxes = [
+  { label: 'E-Mail · Tiefenpsychologie (Dr. Isabelle von Loe)', address: 'tiefenpsychologie@psychotherapie-vonloe.de' },
+  { label: 'E-Mail · Verhaltenstherapie (Andreas von Loe)', address: 'verhaltenstherapie@psychotherapie-vonloe.de' },
+]
 
 const steps = [
   {
@@ -117,12 +113,12 @@ const steps = [
     text: 'Melden Sie sich telefonisch oder per E-Mail. Gern klären wir vorab offene Fragen zu Verfahren und Kosten.',
   },
   {
-    title: 'Warteliste & Erstgespräch',
-    text: 'Sie tragen sich in die passende Warteliste ein. Sobald ein Platz frei wird, vereinbaren wir ein erstes Kennenlernen.',
+    title: 'Erstgespräch',
+    text: 'Wir vereinbaren ein erstes Kennenlernen und klären, ob und wann ein Therapieplatz frei wird.',
   },
   {
     title: 'Therapie beginnen',
-    text: 'In den ersten Sitzungen prüfen wir gemeinsam, ob es passt, und legen die Ziele Ihrer Therapie fest.',
+    text: 'In den ersten Sitzungen prüfen wir gemeinsam, ob ein Arbeitsbündnis entstehen kann, und legen die Ziele Ihrer Therapie fest.',
   },
 ]
 </script>

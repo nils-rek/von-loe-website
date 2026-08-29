@@ -10,19 +10,13 @@
         class="flex items-center gap-2.5 group"
         @click.prevent="goTo('#top')"
       >
-        <img
-          src="/images/mark.webp"
-          alt=""
-          width="40"
-          height="40"
-          class="w-9 h-9 md:w-10 md:h-10 shrink-0"
-        />
+        <PraxisMark class="w-9 h-9 md:w-10 md:h-10 shrink-0" />
         <span class="flex flex-col leading-none">
           <span class="font-serif text-lg md:text-xl font-semibold text-petrol-700 tracking-tight">
             Psychotherapie von Loe
           </span>
           <span class="hidden sm:block text-[0.68rem] tracking-[0.18em] uppercase text-ink/45 mt-0.5">
-            Privatpraxis Heidelberg
+            in Heidelberg
           </span>
         </span>
       </a>
@@ -90,15 +84,16 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import PraxisMark from './PraxisMark.vue'
 
 const route = useRoute()
 const router = useRouter()
 
 const navLinks = [
   { href: '#praxis', label: 'Die Praxis' },
+  { href: '#psychotherapie', label: 'Psychotherapie' },
   { href: '#therapieangebot', label: 'Therapieangebot' },
   { href: '#team', label: 'Wir' },
-  { href: '#wartelisten', label: 'Wartelisten' },
   { href: '#kontakt', label: 'Kontakt' },
 ]
 

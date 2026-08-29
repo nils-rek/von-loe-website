@@ -16,9 +16,8 @@
 
       <div class="space-y-8 text-ink/80 leading-relaxed">
         <p class="text-sm text-iris-700 bg-iris-50 border border-iris-100 rounded-lg px-4 py-3">
-          Hinweis: Diese Datenschutzerklärung ist eine sorgfältig vorbereitete Vorlage mit
-          Platzhaltern in eckigen Klammern. Bitte vor Veröffentlichung vervollständigen und
-          – insbesondere zur Warteliste – rechtlich prüfen lassen.
+          Hinweis: Diese Datenschutzerklärung ist eine sorgfältig vorbereitete Vorlage. Bitte
+          vor Veröffentlichung rechtlich prüfen lassen.
         </p>
 
         <section>
@@ -26,8 +25,9 @@
           <p>
             Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO):<br />
             Psychotherapie von Loe, Dr. Isabelle von Loe &amp; Andreas von Loe,
-            [Praxisadresse], 69115 Heidelberg.<br />
-            Kontakt: [Telefonnummer], [E-Mail-Adresse].
+            Sofienstraße 13, 69115 Heidelberg.<br />
+            Kontakt: 0178 5642428, tiefenpsychologie@psychotherapie-vonloe.de bzw.
+            verhaltenstherapie@psychotherapie-vonloe.de.
           </p>
         </section>
 
@@ -74,29 +74,7 @@
         </section>
 
         <section>
-          <h2 class="font-serif text-xl font-semibold text-ink mb-2">6. Warteliste</h2>
-          <p>
-            Zur Vergabe von Therapieplätzen können Sie sich in unsere Wartelisten eintragen. Dabei
-            verarbeiten wir das Datum der Anfrage, Ihre Telefonnummer und E-Mail-Adresse, Ihren
-            Versicherungsstatus sowie die Angabe, wie Sie auf uns aufmerksam wurden. Zweck ist die
-            organisierte und faire Vergabe freier Behandlungsplätze.
-          </p>
-          <p class="mt-3">
-            Da bereits die Anmeldung zu einer psychotherapeutischen Warteliste einen Bezug zu
-            Gesundheitsdaten aufweisen kann, verarbeiten wir diese Angaben auf Grundlage von
-            Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b sowie Art.&nbsp;9 Abs.&nbsp;2 lit.&nbsp;h DSGVO
-            (Behandlung im Gesundheitsbereich).
-          </p>
-          <p class="mt-3">
-            Für die Warteliste nutzen wir [Bezeichnung des eingesetzten Formular-/Listendienstes].
-            Sofern hierbei ein Auftragsverarbeiter oder Drittanbieter beteiligt ist, besteht mit
-            diesem ein Vertrag zur Auftragsverarbeitung gemäß Art.&nbsp;28 DSGVO. Nähere Angaben zu
-            diesem Dienst und dessen Datenverarbeitung: [Angabe ergänzen].
-          </p>
-        </section>
-
-        <section>
-          <h2 class="font-serif text-xl font-semibold text-ink mb-2">7. Ihre Rechte</h2>
+          <h2 class="font-serif text-xl font-semibold text-ink mb-2">6. Ihre Rechte</h2>
           <p>
             Sie haben das Recht auf Auskunft (Art.&nbsp;15), Berichtigung (Art.&nbsp;16), Löschung
             (Art.&nbsp;17), Einschränkung der Verarbeitung (Art.&nbsp;18), Datenübertragbarkeit
@@ -110,14 +88,14 @@
         </section>
 
         <section>
-          <h2 class="font-serif text-xl font-semibold text-ink mb-2">8. Datensicherheit</h2>
+          <h2 class="font-serif text-xl font-semibold text-ink mb-2">7. Datensicherheit</h2>
           <p>
             Diese Website wird über eine verschlüsselte Verbindung (HTTPS/TLS) ausgeliefert, um die
             Übertragung Ihrer Daten zu schützen.
           </p>
         </section>
 
-        <p class="text-sm text-ink/50">Stand: [Datum einsetzen]</p>
+        <p class="text-sm text-ink/50">Stand: August 2026</p>
       </div>
     </div>
 
