@@ -11,9 +11,9 @@
         </h2>
         <div class="accent-rule mx-auto mt-5"></div>
         <p class="mt-6 text-ink/70 leading-relaxed">
-          In unserer Praxis in einem hellen Heidelberger Altbau begleiten wir – Dr. Isabelle
+          In unserer Praxis begleiten wir – Dr. Isabelle
           von Loe und Andreas von Loe – erwachsene Menschen in herausfordernden Lebensphasen.
-          Wir verbinden zwei anerkannte Psychotherapieverfahren unter einem Dach und nehmen uns
+          Wir vereinen zwei anerkannte Psychotherapieverfahren unter einem Dach und nehmen uns
           Zeit, gemeinsam mit Ihnen einen passenden Weg zu finden.
         </p>
       </div>
@@ -37,14 +37,12 @@
             Raum, der zur Ruhe kommen lässt
           </h3>
           <p class="text-ink/70 leading-relaxed mb-4">
-            Große Fenster, viel Licht und eine warme, klare Gestaltung: Unsere Räume sind so
-            angelegt, dass Sie sich vom ersten Moment an gut aufgehoben fühlen. Hier ist Platz
-            für vertrauensvolle Gespräche – für Einzeltherapie ebenso wie für Therapie in der
-            Gruppe.
+            In unseren hellen und freundlichen Räumlichkeiten werden Sie sich vom ersten Moment an gut aufgehoben fühlen. Hier haben Sie die Möglichkeit
+            für vertrauensvolle Gespräche – in Einzeltherapie ebenso wie in Gruppentherapie.
           </p>
           <p class="text-ink/70 leading-relaxed">
             Uns ist ein wertschätzender, unaufgeregter Umgang wichtig. Sie bestimmen das Tempo;
-            wir bringen unsere fachliche Erfahrung und einen sicheren Rahmen mit.
+            wir bringen unsere fachliche Expertise ein.
           </p>
         </div>
       </div>
@@ -118,12 +116,12 @@ const audiences = [
   },
   {
     title: 'Privat Versicherte & Beihilfe',
-    text: 'Die Abrechnung erfolgt nach der Gebührenordnung. Beihilfeberechtigte erhalten in der Regel anteilig Kosten erstattet – im Rahmen der jeweiligen Beihilfevorschriften.',
+    text: 'Die Abrechnung erfolgt nach der Gebührenordnung (GOÄ/GOP). Beihilfeberechtigte erhalten in der Regel anteilig Kosten erstattet – im Rahmen der jeweiligen Beihilfevorschriften.',
     icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />',
   },
   {
-    title: 'Selbstzahler',
-    text: 'Auch ohne Kostenübernahme sind Sie willkommen. Es gilt dieselbe Gebührenordnung – transparent, ohne Diagnosemeldung an eine Versicherung.',
+    title: 'Selbstzahlende',
+    text: 'Auch ohne Kostenübernahme sind Sie willkommen. Transparente Kosten, ohne Diagnosemeldung an eine Versicherung.',
     icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />',
   },
 ]

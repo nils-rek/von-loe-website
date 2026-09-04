@@ -31,14 +31,13 @@
           </p>
           <p class="text-ink/70 leading-relaxed mb-4">
             Wir schauen gemeinsam darauf, wie Sie mit sich selbst, mit Ihren Bedürfnissen und mit
-            Konflikten im Kontakt mit anderen umgehen – und beziehen die Erfahrungen ein, die Sie
-            geprägt haben. Aus diesem Verstehen entstehen neue Möglichkeiten, anders mit sich und
+            Konflikten im Kontakt mit anderen umgehen – und beziehen die Lebenserfahrungen ein, die Sie
+            geprägt haben. Aus dem wachsenden Verständnis entstehen neue Möglichkeiten, anders mit sich und
             mit anderen umzugehen.
           </p>
           <p class="text-ink/70 leading-relaxed">
             Eine Sitzung dauert in der Regel 50 Minuten und findet meist einmal pro Woche im
-            Sitzen statt. Wie lange eine Therapie insgesamt dauert, hängt von Ihrem Anliegen ab –
-            das stimmen wir gemeinsam ab.
+            Sitzen statt. Wie lange eine Therapie insgesamt dauert, hängt von Ihrem Anliegen ab.
           </p>
         </div>
 

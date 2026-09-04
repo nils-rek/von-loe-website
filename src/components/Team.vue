@@ -11,7 +11,7 @@
         </h2>
         <div class="accent-rule mx-auto mt-5"></div>
         <p class="mt-6 text-ink/70 leading-relaxed">
-          Wir bringen unterschiedliche Verfahren und viel klinische Erfahrung zusammen –
+          Wir integrieren unterschiedliche Verfahren und viel klinische Erfahrung –
           mit einem gemeinsamen Anspruch: Sie wirksam und menschlich zu begleiten.
         </p>
       </div>
@@ -109,7 +109,6 @@ const people = [
       'Ängste & Depressionen',
       'Psychosomatik',
       'Essstörungen',
-      'Chronische Schmerzen',
       'Postpartale Erkrankungen',
       'Belastung durch unerfüllten Kinderwunsch',
       'Trauer & Lebenskrisen',
@@ -126,14 +125,14 @@ const people = [
   },
   {
     name: 'Andreas von Loe',
-    credentials: 'M.Sc. Psych. · Psychologischer Psychotherapeut (Approbation)',
-    method: 'Verhaltenstherapie & Schematherapie',
+    credentials: 'M.Sc. Psych. · Psychologischer Psychotherapeut (Approbation 2020)',
+    method: 'Verhaltenstherapie',
     email: 'verhaltenstherapie@psychotherapie-vonloe.de',
     tagClass: 'bg-petrol-50 text-petrol-700',
     dotClass: 'bg-petrol-400',
     photo: '/images/andreas-von-loe.webp',
     intro:
-      'Ich arbeite verhaltenstherapeutisch und schematherapeutisch – konkret, gegenwartsbezogen und mit Blick auf tief verankerte Muster. Erfahrung sammelte ich in Psychiatrie, Beratung und Praxis.',
+      'Ich arbeite verhaltenstherapeutisch und schematherapeutisch (aktuell in Schematherapie-Weiterbildung befindlich) – konkret, gegenwartsbezogen und mit Blick auf tief verankerte Muster. Berufserfahrung in Psychiatrie, Beratung und Praxis.',
     focus: [
       'Ängste & Depressionen',
       'Persönlichkeitsstörungen',
@@ -145,8 +144,8 @@ const people = [
     ],
     cv: [
       'Ausbildung zum Psychologischen Psychotherapeuten am ZPP Heidelberg',
-      'Psychologe am Berufsbildungswerk Neckargemünd der SRH',
       'Psychiatrie & Psychosomatik, Universitätsklinikum Heidelberg',
+      'Psychologe am Berufsbildungswerk Neckargemünd der SRH',
       'Zuletzt Sicherstellungsassistenz in der Praxis von Andrea Grau, Heidelberg',
     ],
   },
