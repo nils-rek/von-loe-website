@@ -23,24 +23,37 @@
         <!-- Text -->
         <div class="order-2 md:order-1">
           <p class="animate-hero-fade-in text-petrol-600 font-medium tracking-[0.18em] text-xs md:text-sm uppercase mb-5">
-            Praxis für Psychotherapie · Heidelberg
+            Psychologische Psychotherapie in Heidelberg
           </p>
-          <h1 class="animate-hero-fade-in-1 font-serif text-5xl md:text-6xl lg:text-7xl font-semibold text-ink leading-[1.05] tracking-tight mb-6">
-            Psychotherapie<br />von&nbsp;Loe
+          <h1 class="animate-hero-fade-in-1 font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-ink leading-[1.1] tracking-tight mb-6">
+            Willkommen in unserer<br class="hidden lg:block" /> gemeinsamen Praxis
           </h1>
           <div class="animate-hero-fade-in-2 accent-rule mb-7"></div>
-          <p class="animate-hero-fade-in-2 text-lg md:text-xl text-ink/70 leading-relaxed mb-8 max-w-xl">
-            Psychologische Psychotherapie – tiefenpsychologisch
-            fundiert und verhaltenstherapeutisch. Für Erwachsene, in Einzel- und
-            Gruppentherapie.
+          <p class="animate-hero-fade-in-2 text-lg md:text-xl text-ink/75 leading-relaxed mb-5 max-w-xl">
+            Die Suche nach der richtigen psychotherapeutischen Unterstützung kann
+            herausfordernd sein. Welches Therapieverfahren passt zu meiner aktuellen
+            Lebenssituation? Ist eine Einzel- oder eine Gruppentherapie für mich sinnvoll?
+          </p>
+          <p class="animate-hero-fade-in-2 text-base md:text-lg text-ink/70 leading-relaxed mb-8 max-w-xl">
+            In unserer Praxis bündeln wir zwei bewährte Therapieformen unter einem Dach:
+            Tiefenpsychologisch fundierte Psychotherapie und Kognitive Verhaltenstherapie.
+            Sie müssen nicht im Voraus wissen, welcher Weg der richtige für Sie ist. In
+            unseren Erstgesprächen nehmen wir uns Zeit für eine sorgfältige Diagnostik und
+            Indikationsstellung. Gemeinsam klären wir Ihre Anliegen und finden genau das
+            Setting – ob tiefenpsychologisch oder verhaltenstherapeutisch, ob im Einzel-
+            oder im Gruppenrahmen –, das Sie bestmöglich auf Ihrem Weg unterstützt.
           </p>
           <div class="animate-hero-fade-in-3 flex flex-col sm:flex-row gap-4">
+            <!--
+              TODO(Warteliste): Sobald ein Wartelisten-/Terminanbieter feststeht, führt dieser
+              Button dorthin statt zum Kontaktabschnitt (siehe Wartelisten.vue).
+            -->
             <a
               href="#kontakt"
               class="inline-flex items-center justify-center px-7 py-3.5 bg-petrol-600 text-white font-medium rounded-lg shadow-sm hover:bg-petrol-700 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-petrol-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper-50"
               @click.prevent="scrollTo('#kontakt')"
             >
-              Kontakt aufnehmen
+              Termin anfragen
             </a>
             <a
               href="#therapieangebot"
