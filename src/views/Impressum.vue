@@ -23,7 +23,7 @@
         <section>
           <h2 class="font-serif text-xl font-semibold text-ink mb-2">Angaben gemäß § 5 DDG</h2>
           <p>
-            Psychotherapie von Loe<br />
+            Psychotherapeutische Praxis von Loe<br />
             Dr. Isabelle von Loe &amp; Andreas von Loe<br />
             Sofienstraße 13<br />
             69115 Heidelberg

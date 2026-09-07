@@ -3,22 +3,19 @@
     id="top"
     class="relative min-h-[92vh] flex items-center overflow-hidden bg-gradient-to-br from-paper-100 via-paper-50 to-petrol-50/60"
   >
-    <!-- Soft floating dandelion-inspired motif -->
+    <!-- Weiche Farbflächen + die Bildmarke des Logos als Motiv -->
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
       <div class="absolute -top-24 -right-24 w-[34rem] h-[34rem] rounded-full bg-petrol-100/50 blur-3xl animate-float-slow"></div>
       <div class="absolute top-1/3 -left-24 w-[26rem] h-[26rem] rounded-full bg-moss-100/40 blur-3xl animate-float"></div>
       <div class="absolute -bottom-20 right-1/4 w-[22rem] h-[22rem] rounded-full bg-iris-100/40 blur-3xl animate-float-delayed"></div>
-      <svg class="absolute top-20 right-4 md:right-16 w-40 h-40 opacity-60 animate-float" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-        <circle cx="30" cy="50" r="4" fill="#7fb079" />
-        <circle cx="42" cy="38" r="4.5" fill="#a487c0" />
-        <circle cx="44" cy="62" r="4.5" fill="#6e97c4" />
-        <circle cx="56" cy="30" r="4" fill="#8e6fb3" />
-        <circle cx="58" cy="70" r="4" fill="#4f7cb0" />
-        <circle cx="20" cy="44" r="3" fill="#a3c99d" />
-        <circle cx="22" cy="58" r="3" fill="#7fb079" />
-        <circle cx="70" cy="40" r="3" fill="#6e97c4" />
-        <circle cx="72" cy="60" r="3" fill="#a487c0" />
-      </svg>
+      <img
+        src="/images/logo-wide.webp"
+        alt=""
+        width="658"
+        height="333"
+        class="absolute top-16 right-2 md:right-10 w-56 md:w-72 lg:w-80 opacity-40 animate-float"
+        loading="eager"
+      />
     </div>
 
     <div class="relative max-w-6xl mx-auto px-5 md:px-6 py-28 md:py-32 w-full">
@@ -33,7 +30,7 @@
           </h1>
           <div class="animate-hero-fade-in-2 accent-rule mb-7"></div>
           <p class="animate-hero-fade-in-2 text-lg md:text-xl text-ink/70 leading-relaxed mb-8 max-w-xl">
-            Ein geschützter Raum für psychologische Psychotherapie – tiefenpsychologisch
+            Psychologische Psychotherapie – tiefenpsychologisch
             fundiert und verhaltenstherapeutisch. Für Erwachsene, in Einzel- und
             Gruppentherapie.
           </p>

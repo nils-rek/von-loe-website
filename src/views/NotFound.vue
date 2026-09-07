@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-paper-100 via-paper-50 to-petrol-50/60 px-5">
     <div class="text-center max-w-md">
-      <img src="/images/mark.webp" alt="" width="72" height="72" class="w-16 h-16 mx-auto mb-6 opacity-90" />
+      <img src="/images/logo-wide.webp" alt="" width="658" height="333" class="h-14 w-auto mx-auto mb-6 opacity-90" />
       <p class="font-serif text-6xl font-semibold text-petrol-700 mb-3">404</p>
       <h1 class="font-serif text-2xl font-semibold text-ink mb-3">Seite nicht gefunden</h1>
       <p class="text-ink/65 leading-relaxed mb-8">

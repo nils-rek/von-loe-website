@@ -1,24 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from './views/HomePage.vue'
 
-const defaultTitle = 'Psychotherapie von Loe | Psychotherapeutische Praxis in Heidelberg'
+const defaultTitle = 'Psychotherapeutische Praxis von Loe | Psychotherapie in Heidelberg'
 
 const routes = [
   { path: '/', component: HomePage },
   {
     path: '/impressum',
     component: () => import('./views/Impressum.vue'),
-    meta: { title: 'Impressum | Psychotherapie von Loe' },
+    meta: { title: 'Impressum | Psychotherapeutische Praxis von Loe' },
   },
   {
     path: '/datenschutz',
     component: () => import('./views/Datenschutz.vue'),
-    meta: { title: 'Datenschutz | Psychotherapie von Loe' },
+    meta: { title: 'Datenschutz | Psychotherapeutische Praxis von Loe' },
   },
   {
     path: '/:pathMatch(.*)*',
     component: () => import('./views/NotFound.vue'),
-    meta: { title: 'Seite nicht gefunden | Psychotherapie von Loe' },
+    meta: { title: 'Seite nicht gefunden | Psychotherapeutische Praxis von Loe' },
   },
 ]
 

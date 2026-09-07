@@ -7,18 +7,18 @@
       <!-- Wordmark -->
       <a
         href="#top"
-        class="flex items-center gap-2.5 group"
+        class="flex items-center shrink-0 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-petrol-500 focus-visible:ring-offset-2"
         @click.prevent="goTo('#top')"
       >
-        <PraxisMark class="w-9 h-9 md:w-10 md:h-10 shrink-0" />
-        <span class="flex flex-col leading-none">
-          <span class="font-serif text-lg md:text-xl font-semibold text-petrol-700 tracking-tight">
-            Psychotherapie von Loe
-          </span>
-          <span class="hidden sm:block text-[0.68rem] tracking-[0.18em] uppercase text-ink/45 mt-0.5">
-            in Heidelberg
-          </span>
-        </span>
+        <!-- Logo inklusive Schriftzug direkt aus der Logodatei – kein zusätzlicher Text daneben -->
+        <img
+          src="/images/logo-lockup.webp"
+          alt="Psychotherapeutische Praxis von Loe"
+          width="1367"
+          height="240"
+          class="h-9 sm:h-10 md:h-11 w-auto"
+          fetchpriority="high"
+        />
       </a>
 
       <!-- Desktop Nav -->
@@ -84,7 +84,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import PraxisMark from './PraxisMark.vue'
 
 const route = useRoute()
 const router = useRouter()

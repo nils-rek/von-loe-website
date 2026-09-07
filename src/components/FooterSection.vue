@@ -4,9 +4,19 @@
       <div class="grid gap-10 md:grid-cols-3">
         <!-- Brand -->
         <div>
-          <div class="flex items-center gap-2.5 mb-4">
-            <PraxisMark class="w-9 h-9 rounded-md bg-white/95 p-1" />
-            <span class="font-serif text-xl font-semibold">Psychotherapie von Loe</span>
+          <!--
+            Der Schriftzug des Logos ist dunkelblau und waere auf dem petrolfarbenen
+            Footer nicht lesbar – deshalb steht das Logo hier auf einer hellen Flaeche.
+          -->
+          <div class="inline-flex mb-5 rounded-xl bg-paper-50 px-3.5 py-2.5">
+            <img
+              src="/images/logo-lockup.webp"
+              alt="Psychotherapeutische Praxis von Loe"
+              width="1367"
+              height="240"
+              class="h-9 w-auto"
+              loading="lazy"
+            />
           </div>
           <p class="text-sm text-paper-100/70 leading-relaxed max-w-xs">
             Praxis für psychologische Psychotherapie in Heidelberg –
@@ -53,7 +63,7 @@
       </div>
 
       <div class="mt-12 pt-6 border-t border-white/10 text-xs text-paper-100/55">
-        © {{ year }} Psychotherapie von Loe. Alle Rechte vorbehalten.
+        © {{ year }} Psychotherapeutische Praxis von Loe. Alle Rechte vorbehalten.
       </div>
     </div>
   </footer>
@@ -61,7 +71,6 @@
 
 <script setup>
 import { useRoute, useRouter } from 'vue-router'
-import PraxisMark from './PraxisMark.vue'
 
 const route = useRoute()
 const router = useRouter()

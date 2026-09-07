@@ -24,7 +24,7 @@
           <h2 class="font-serif text-xl font-semibold text-ink mb-2">1. Verantwortlicher</h2>
           <p>
             Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO):<br />
-            Psychotherapie von Loe, Dr. Isabelle von Loe &amp; Andreas von Loe,
+            Psychotherapeutische Praxis von Loe, Dr. Isabelle von Loe &amp; Andreas von Loe,
             Sofienstraße 13, 69115 Heidelberg.<br />
             Kontakt: 0178 5642428, tiefenpsychologie@psychotherapie-vonloe.de bzw.
             verhaltenstherapie@psychotherapie-vonloe.de.
