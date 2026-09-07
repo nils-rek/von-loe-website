@@ -56,11 +56,11 @@
               Termin anfragen
             </a>
             <a
-              href="#therapieangebot"
+              href="#angebot"
               class="inline-flex items-center justify-center px-7 py-3.5 border border-petrol-300 text-petrol-700 font-medium rounded-lg hover:bg-petrol-50 hover:border-petrol-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-petrol-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper-50"
-              @click.prevent="scrollTo('#therapieangebot')"
+              @click.prevent="scrollTo('#angebot')"
             >
-              Therapieangebot ansehen
+              Unser Angebot ansehen
             </a>
           </div>
         </div>
@@ -87,10 +87,10 @@
 
     <!-- Scroll cue -->
     <a
-      href="#praxis"
+      href="#angebot"
       class="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-1 text-ink/40 hover:text-petrol-600 transition-colors"
-      aria-label="Weiter zur Praxis"
-      @click.prevent="scrollTo('#praxis')"
+      aria-label="Weiter zum Angebot"
+      @click.prevent="scrollTo('#angebot')"
     >
       <span class="text-[0.7rem] tracking-widest uppercase">Mehr</span>
       <svg class="w-5 h-5 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

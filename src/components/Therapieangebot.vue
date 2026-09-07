@@ -1,19 +1,25 @@
 <template>
-  <section id="therapieangebot" class="py-24 md:py-32 bg-white">
+  <section id="angebot" class="py-24 md:py-32 bg-white">
     <div class="max-w-6xl mx-auto px-5 md:px-6">
       <!-- Header -->
-      <div class="max-w-2xl mx-auto text-center mb-16" v-bind="headerReveal">
+      <div class="max-w-3xl mx-auto text-center mb-16" v-bind="headerReveal">
         <p class="text-petrol-600 font-medium tracking-[0.18em] text-xs md:text-sm uppercase mb-3">
-          Therapieangebot
+          Unser Angebot &amp; Verfahren
         </p>
         <h2 class="text-3xl md:text-4xl font-semibold text-ink leading-snug">
-          Zwei Verfahren unter einem Dach
+          Zwei Verfahren, zwei Settings – unter einem Dach
         </h2>
         <div class="accent-rule mx-auto mt-5"></div>
         <p class="mt-6 text-ink/70 leading-relaxed">
-          Wir bieten psychologische Psychotherapie für Erwachsene an – als Einzel- und als
-          Gruppentherapie. Welches Verfahren zu Ihnen passt, finden wir gemeinsam in einem
-          ersten Gespräch heraus.
+          Psychotherapie unterstützt Sie dabei, psychische, körperliche und psychosomatische
+          Beschwerden zu verstehen und zu verarbeiten. Ihr eigentliches Mittel ist dabei das
+          Gespräch zwischen zwei Menschen.
+        </p>
+        <p class="mt-4 text-ink/65 leading-relaxed">
+          Vieles, was uns belastet, entzieht sich zunächst der Sprache. In der Therapie geht es
+          deshalb darum, miteinander ins Gespräch zu kommen und Worte und Bilder für das zu
+          finden, was bisher unverständlich oder sinnlos erschien. Was sich anfangs nur als
+          Symptom zeigt, bekommt so nach und nach eine Bedeutung.
         </p>
       </div>
 
@@ -36,6 +42,41 @@
           <p class="text-xs font-medium tracking-wide uppercase mb-3" :class="a.tagClass">{{ a.tag }}</p>
           <p class="text-ink/65 leading-relaxed text-[0.95rem]">{{ a.text }}</p>
         </article>
+      </div>
+
+      <!-- Einzel oder Gruppe -->
+      <div class="bg-paper-50 rounded-2xl p-8 md:p-10 border border-paper-200 mb-16" v-bind="settingReveal">
+        <div class="max-w-2xl mb-8">
+          <h3 class="font-serif text-2xl font-semibold text-ink mb-3">
+            Einzel- oder Gruppentherapie?
+          </h3>
+          <p class="text-ink/70 leading-relaxed">
+            Beide Settings wirken, aber auf unterschiedliche Weise. Sie müssen sich vorab nicht
+            festlegen: Welche Form zu Ihrem Anliegen passt, klären wir gemeinsam in der
+            psychotherapeutischen Sprechstunde. Häufig ergänzen sich beide auch.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div
+            v-for="s in settings"
+            :key="s.title"
+            class="bg-white rounded-xl p-6 border border-paper-200/70 border-t-2"
+            :class="s.borderClass"
+          >
+            <h4 class="font-semibold text-ink mb-3">{{ s.title }}</h4>
+            <p class="text-sm text-ink/65 leading-relaxed mb-4">{{ s.text }}</p>
+            <p class="text-xs font-semibold tracking-wide uppercase text-ink/45 mb-2">
+              Besonders geeignet bei
+            </p>
+            <ul class="space-y-2">
+              <li v-for="item in s.suited" :key="item" class="flex items-start gap-2.5 text-sm text-ink/70">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" :class="s.dotClass"></span>
+                <span>{{ item }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <!-- Behandlungsspektrum -->
@@ -63,22 +104,23 @@ import { useScrollReveal } from '../composables/useScrollReveal'
 const { reveal } = useScrollReveal()
 const headerReveal = reveal()
 const cardReveals = [reveal({ delay: 0 }), reveal({ delay: 90 }), reveal({ delay: 180 })]
+const settingReveal = reveal({ delay: 60 })
 const spectrumReveal = reveal({ delay: 60 })
 
 const approaches = [
   {
     title: 'Tiefenpsychologisch fundierte Psychotherapie',
-    tag: 'Dr. Isabelle von Loe',
-    text: 'Wir schauen gemeinsam auf innere Konflikte und wiederkehrende Beziehungsmuster, die häufig hinter Beschwerden stehen. Ziel ist, deren Ursprung zu verstehen, neue Bewältigungsmechanismen zu entwickeln und mehr Handlungsspielraum zu gewinnen.',
+    tag: 'Einzeltherapie · Dr. Isabelle von Loe',
+    text: 'Wir schauen gemeinsam auf unbewusste Konflikte, frühe Prägungen und aktuelle Beziehungsmuster, die häufig hinter Beschwerden stehen. Ziel ist, deren Ursprung zu verstehen, neue Bewältigungsmechanismen zu entwickeln und mehr Handlungsspielraum zu gewinnen.',
     borderClass: 'border-t-moss-400',
     iconWrap: 'bg-moss-50 text-moss-600 group-hover:bg-moss-500 group-hover:text-white',
     tagClass: 'text-moss-600',
     icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />',
   },
   {
-    title: 'Verhaltenstherapie & Schematherapie',
-    tag: 'Andreas von Loe',
-    text: 'Ein konkreter, gegenwartsbezogener Ansatz: hilfreiche Denk- und Verhaltensweisen erarbeiten und einüben. Die Schematherapie ergänzt dies um die Arbeit an tief verankerten Beziehungsmustern.',
+    title: 'Kognitive Verhaltenstherapie',
+    tag: 'Einzel- & Gruppentherapie · Andreas von Loe',
+    text: 'Ein konkreter, gegenwartsbezogener Ansatz: hilfreiche Denk- und Verhaltensmuster erarbeiten und einüben. Schematherapeutische Elemente ergänzen dies um die Arbeit mit tief sitzenden Grundbedürfnissen und emotionalen Schemata.',
     borderClass: 'border-t-petrol-400',
     iconWrap: 'bg-petrol-50 text-petrol-600 group-hover:bg-petrol-600 group-hover:text-white',
     tagClass: 'text-petrol-600',
@@ -86,12 +128,39 @@ const approaches = [
   },
   {
     title: 'Gruppentherapie',
-    tag: 'Verhaltenstherapeutisch',
-    text: 'In der verhaltenstherapeutischen Gruppentherapie lernen Sie mit und von anderen. Der geschützte Rahmen macht erfahrbar, dass Sie mit Ihren Themen nicht allein sind.',
+    tag: 'Verhaltenstherapeutisch · Andreas von Loe',
+    text: 'In der verhaltenstherapeutischen Gruppentherapie lernen Sie mit und von anderen. Es wird erfahrbar, dass Sie mit Ihren Themen nicht allein sind – und die Gruppe wird zum Übungsfeld für neue Erfahrungen im Kontakt.',
     borderClass: 'border-t-iris-400',
     iconWrap: 'bg-iris-50 text-iris-600 group-hover:bg-iris-500 group-hover:text-white',
     tagClass: 'text-iris-600',
     icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />',
+  },
+]
+
+const settings = [
+  {
+    title: 'Einzeltherapie',
+    text: 'Die Sitzung gehört ganz Ihrem Anliegen. Tempo, Tiefe und Themen bestimmen Sie – wir bringen unsere fachliche Expertise ein.',
+    borderClass: 'border-t-petrol-300',
+    dotClass: 'bg-petrol-400',
+    suited: [
+      'sehr persönlichen oder schambesetzten Themen',
+      'akuten Krisen und hoher Belastung',
+      'dem Wunsch, zunächst in Ruhe Vertrauen aufzubauen',
+      'Anliegen, die eine biografische Aufarbeitung brauchen',
+    ],
+  },
+  {
+    title: 'Gruppentherapie',
+    text: 'Sie arbeiten mit Menschen, die Ähnliches erleben. Die Rückmeldungen der Gruppe machen Muster sichtbar, die im Einzelkontakt oft verborgen bleiben.',
+    borderClass: 'border-t-iris-300',
+    dotClass: 'bg-iris-400',
+    suited: [
+      'Themen rund um Selbstwert und Abgrenzung',
+      'sozialen Ängsten und Rückzug',
+      'wiederkehrenden Schwierigkeiten in Beziehungen',
+      'dem Wunsch, Neues direkt im Kontakt zu erproben',
+    ],
   },
 ]
 
@@ -100,8 +169,7 @@ const conditions = [
   'Depressionen und Erschöpfung',
   'Essstörungen',
   'Psychosomatische Beschwerden',
-  'Chronische Schmerzen',
-  'Stress, Burnout und Mobbing',
+  'Stress und Burnout',
   'Zwangsstörungen',
   'Persönlichkeitsstörungen',
   'Postpartale und peripartale Belastungen',

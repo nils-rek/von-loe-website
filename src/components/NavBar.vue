@@ -22,7 +22,7 @@
       </a>
 
       <!-- Desktop Nav -->
-      <ul class="hidden lg:flex items-center gap-7">
+      <ul class="hidden lg:flex items-center gap-5 xl:gap-7">
         <li v-for="link in navLinks" :key="link.href">
           <a
             :href="link.href"
@@ -89,10 +89,11 @@ const route = useRoute()
 const router = useRouter()
 
 const navLinks = [
-  { href: '#praxis', label: 'Die Praxis' },
-  { href: '#psychotherapie', label: 'Psychotherapie' },
-  { href: '#therapieangebot', label: 'Therapieangebot' },
-  { href: '#team', label: 'Wir' },
+  { href: '#angebot', label: 'Angebot' },
+  { href: '#ablauf', label: 'Ablauf' },
+  { href: '#kosten', label: 'Kosten' },
+  { href: '#team', label: 'Über uns' },
+  { href: '#raeume', label: 'Räumlichkeiten' },
   { href: '#kontakt', label: 'Kontakt' },
 ]
 

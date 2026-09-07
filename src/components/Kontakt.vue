@@ -1,10 +1,10 @@
 <template>
-  <section id="kontakt" class="py-24 md:py-32 bg-white">
+  <section id="kontakt" class="py-24 md:py-32 bg-paper-100">
     <div class="max-w-6xl mx-auto px-5 md:px-6">
       <!-- Header -->
       <div class="max-w-2xl mx-auto text-center mb-16" v-bind="headerReveal">
         <p class="text-petrol-600 font-medium tracking-[0.18em] text-xs md:text-sm uppercase mb-3">
-          Kontakt
+          Kontakt &amp; Anfahrt
         </p>
         <h2 class="text-3xl md:text-4xl font-semibold text-ink leading-snug">
           Wir freuen uns auf Ihre Nachricht
@@ -13,7 +13,8 @@
         <p class="mt-6 text-ink/70 leading-relaxed">
           Für ein erstes Kennenlernen oder Fragen zum Ablauf erreichen Sie uns telefonisch
           oder per E-Mail. Schreiben Sie gern direkt an die Kollegin oder den Kollegen, dessen
-          Verfahren zu Ihrem Anliegen passt – wir melden uns zeitnah zurück.
+          Verfahren zu Ihrem Anliegen passt – wenn Sie unsicher sind, melden Sie sich einfach
+          bei uns beiden. Wir melden uns zeitnah zurück.
         </p>
       </div>
 
@@ -22,7 +23,7 @@
         <div class="space-y-4" v-bind="leftReveal">
           <a
             href="tel:+491785642428"
-            class="group flex items-center gap-4 bg-paper-50 rounded-xl p-5 border border-paper-200 hover:border-petrol-300 hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-petrol-500"
+            class="group flex items-center gap-4 bg-white rounded-xl p-5 border border-paper-200 hover:border-petrol-300 hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-petrol-500"
           >
             <span class="w-12 h-12 rounded-full bg-petrol-50 flex items-center justify-center text-petrol-600 group-hover:bg-petrol-600 group-hover:text-white transition-colors shrink-0">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -32,6 +33,9 @@
             <span>
               <span class="block text-xs text-ink/50">Telefon</span>
               <span class="block font-medium text-ink">0178 5642428</span>
+              <span class="block text-xs text-ink/50 mt-0.5">
+                Telefonsprechzeit: 5 Minuten vor der vollen Stunde
+              </span>
             </span>
           </a>
 
@@ -39,7 +43,7 @@
             v-for="m in mailboxes"
             :key="m.address"
             :href="`mailto:${m.address}`"
-            class="group flex items-center gap-4 bg-paper-50 rounded-xl p-5 border border-paper-200 hover:border-petrol-300 hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-petrol-500"
+            class="group flex items-center gap-4 bg-white rounded-xl p-5 border border-paper-200 hover:border-petrol-300 hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-petrol-500"
           >
             <span class="w-12 h-12 rounded-full bg-petrol-50 flex items-center justify-center text-petrol-600 group-hover:bg-petrol-600 group-hover:text-white transition-colors shrink-0">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -52,8 +56,8 @@
             </span>
           </a>
 
-          <!-- Address + hours -->
-          <div class="bg-paper-50 rounded-xl p-5 border border-paper-200">
+          <!-- Adresse -->
+          <div class="bg-white rounded-xl p-5 border border-paper-200">
             <div class="flex items-start gap-4">
               <span class="w-12 h-12 rounded-full bg-petrol-50 flex items-center justify-center text-petrol-600 shrink-0">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -64,30 +68,33 @@
               <div>
                 <span class="block text-xs text-ink/50 mb-1">Praxis</span>
                 <address class="not-italic font-medium text-ink leading-relaxed">
+                  Psychotherapeutische Praxis von Loe<br />
                   Sofienstraße 13<br />69115 Heidelberg
                 </address>
-                <p class="text-sm text-ink/55 mt-3">
-                  Telefonische Erreichbarkeit: 5 Minuten vor der vollen Stunde
-                </p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Erste Schritte -->
+        <!-- Anfahrt -->
+        <!--
+          TODO(Anfahrt): Entwurf – bitte vor dem Livegang prüfen und konkretisieren
+          (Linien­nummern der Straßenbahnen/Busse, Name und Entfernung des nächstgelegenen
+          Parkhauses, Etage/Zugang der Praxis sowie eine Angabe zur Barrierefreiheit).
+        -->
         <div class="rounded-2xl bg-gradient-to-br from-petrol-50 to-paper-100 border border-paper-200 p-7 md:p-8" v-bind="rightReveal">
-          <h3 class="font-serif text-2xl font-semibold text-ink mb-6">Erste Schritte</h3>
-          <ol class="space-y-6">
-            <li v-for="(step, idx) in steps" :key="step.title" class="flex gap-4">
-              <span class="shrink-0 w-9 h-9 rounded-full bg-petrol-600 text-white font-semibold flex items-center justify-center">
-                {{ idx + 1 }}
+          <h3 class="font-serif text-2xl font-semibold text-ink mb-6">Anfahrt</h3>
+          <ul class="space-y-6">
+            <li v-for="route in routes" :key="route.title" class="flex gap-4">
+              <span class="shrink-0 w-11 h-11 rounded-full bg-white flex items-center justify-center text-petrol-600 ring-1 ring-petrol-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" v-html="route.icon"></svg>
               </span>
               <div>
-                <h4 class="font-semibold text-ink">{{ step.title }}</h4>
-                <p class="text-sm text-ink/65 leading-relaxed mt-1">{{ step.text }}</p>
+                <h4 class="font-semibold text-ink">{{ route.title }}</h4>
+                <p class="text-sm text-ink/65 leading-relaxed mt-1">{{ route.text }}</p>
               </div>
             </li>
-          </ol>
+          </ul>
         </div>
       </div>
     </div>
@@ -107,18 +114,21 @@ const mailboxes = [
   { label: 'E-Mail · Verhaltenstherapie (Andreas von Loe)', address: 'verhaltenstherapie@psychotherapie-vonloe.de' },
 ]
 
-const steps = [
+const routes = [
   {
-    title: 'Kontakt aufnehmen',
-    text: 'Melden Sie sich telefonisch oder per E-Mail. Gern klären wir vorab offene Fragen zu Verfahren und Kosten.',
+    title: 'Mit öffentlichen Verkehrsmitteln',
+    text: 'Der Bismarckplatz ist der zentrale Umsteigepunkt Heidelbergs und von zahlreichen Straßenbahn- und Buslinien angefahren. Von dort erreichen Sie die Praxis in der Sofienstraße in wenigen Gehminuten. Vom Hauptbahnhof fahren Sie mit der Straßenbahn ebenfalls nur wenige Minuten bis zum Bismarckplatz.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z" />',
   },
   {
-    title: 'Erstgespräch',
-    text: 'Wir vereinbaren ein erstes Kennenlernen und klären, ob und wann ein Therapieplatz frei wird.',
+    title: 'Mit dem Auto',
+    text: 'Über die B37 bzw. die Bergheimer Straße gelangen Sie direkt an den Bismarckplatz. In der Innenstadt gilt überwiegend Bewohnerparken; wir empfehlen daher eines der kostenpflichtigen Parkhäuser rund um den Bismarckplatz.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />',
   },
   {
-    title: 'Therapie beginnen',
-    text: 'In den ersten Sitzungen prüfen wir gemeinsam, ob ein Arbeitsbündnis entstehen kann, und legen die Ziele Ihrer Therapie fest.',
+    title: 'Lage',
+    text: 'Die Praxis liegt zentral in unmittelbarer Nähe des Bismarckplatzes und ist auch zu Fuß oder mit dem Rad gut zu erreichen.',
+    icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" />',
   },
 ]
 </script>

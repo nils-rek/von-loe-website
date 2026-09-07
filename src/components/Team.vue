@@ -4,7 +4,7 @@
       <!-- Header -->
       <div class="max-w-2xl mx-auto text-center mb-16" v-bind="headerReveal">
         <p class="text-petrol-600 font-medium tracking-[0.18em] text-xs md:text-sm uppercase mb-3">
-          Wir
+          Über uns
         </p>
         <h2 class="text-3xl md:text-4xl font-semibold text-ink leading-snug">
           Die Menschen hinter der Praxis
@@ -97,14 +97,14 @@ const cardReveals = [reveal({ delay: 0 }), reveal({ delay: 120 })]
 const people = [
   {
     name: 'Dr. Isabelle von Loe',
-    credentials: 'M.Sc. Psych. Dr. sc. hum. · Psychologische Psychotherapeutin (Approbation 2021)',
+    credentials: 'M.Sc. Psych. Dr. sc. hum. · Psychologische Psychotherapeutin (Approbation 2021) · Einzeltherapie für Erwachsene',
     method: 'Tiefenpsychologisch fundiert',
     email: 'tiefenpsychologie@psychotherapie-vonloe.de',
     tagClass: 'bg-moss-50 text-moss-700',
     dotClass: 'bg-moss-400',
     photo: '/images/isabelle-von-loe.webp',
     intro:
-      'Ich arbeite tiefenpsychologisch fundiert und interessiere mich für die Zusammenhänge hinter Ihren Beschwerden – geprägt durch langjährige Tätigkeit in Psychosomatik und Psychiatrie.',
+      'Ich behandle Erwachsene tiefenpsychologisch fundiert im Einzelsetting und interessiere mich für die Zusammenhänge hinter Ihren Beschwerden – geprägt durch langjährige Tätigkeit in Psychosomatik und Psychiatrie.',
     focus: [
       'Ängste & Depressionen',
       'Psychosomatik',
@@ -125,14 +125,14 @@ const people = [
   },
   {
     name: 'Andreas von Loe',
-    credentials: 'M.Sc. Psych. · Psychologischer Psychotherapeut (Approbation 2020)',
-    method: 'Verhaltenstherapie',
+    credentials: 'M.Sc. Psych. · Psychologischer Psychotherapeut (Approbation 2020) · Einzel- und Gruppentherapie für Erwachsene',
+    method: 'Kognitive Verhaltenstherapie',
     email: 'verhaltenstherapie@psychotherapie-vonloe.de',
     tagClass: 'bg-petrol-50 text-petrol-700',
     dotClass: 'bg-petrol-400',
     photo: '/images/andreas-von-loe.webp',
     intro:
-      'Ich arbeite verhaltenstherapeutisch und schematherapeutisch (aktuell in Schematherapie-Weiterbildung befindlich) – konkret, gegenwartsbezogen und mit Blick auf tief verankerte Muster. Berufserfahrung in Psychiatrie, Beratung und Praxis.',
+      'Ich behandle Erwachsene kognitiv-verhaltenstherapeutisch und schematherapeutisch (aktuell in Schematherapie-Weiterbildung befindlich) – im Einzel- wie im Gruppensetting, konkret und gegenwartsbezogen. Berufserfahrung in Psychiatrie, Beratung und Praxis.',
     focus: [
       'Ängste & Depressionen',
       'Persönlichkeitsstörungen',

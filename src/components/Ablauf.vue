@@ -1,52 +1,54 @@
 <template>
-  <section id="psychotherapie" class="py-24 md:py-32 bg-paper-100">
+  <section id="ablauf" class="py-24 md:py-32 bg-paper-100">
     <div class="max-w-6xl mx-auto px-5 md:px-6">
       <!-- Header -->
       <div class="max-w-2xl mx-auto text-center mb-16" v-bind="headerReveal">
         <p class="text-petrol-600 font-medium tracking-[0.18em] text-xs md:text-sm uppercase mb-3">
-          Psychotherapie
+          Ablauf &amp; Erstgespräch
         </p>
         <h2 class="text-3xl md:text-4xl font-semibold text-ink leading-snug">
-          Was Psychotherapie leisten kann
+          Von der Kontaktaufnahme bis zur Probatorik
         </h2>
         <div class="accent-rule mx-auto mt-5"></div>
         <p class="mt-6 text-ink/70 leading-relaxed">
-          Psychotherapie unterstützt Sie dabei, psychische, körperliche und psychosomatische
-          Beschwerden zu verstehen und zu verarbeiten. Ihr eigentliches Mittel ist dabei das
-          Gespräch zwischen zwei Menschen.
+          Der Weg in eine Therapie ist überschaubarer, als er von außen wirkt. Hier sehen Sie,
+          welche Schritte auf Sie zukommen – und was in den ersten Gesprächen tatsächlich
+          passiert.
         </p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-10 md:gap-14 items-start">
-        <!-- Was Psychotherapie ist -->
+        <!-- Was in der Sprechstunde passiert -->
         <div v-bind="textReveal">
           <h3 class="font-serif text-2xl font-semibold text-ink mb-4">
-            Worte finden für das, was noch keine hat
+            Was passiert in der psychotherapeutischen Sprechstunde?
           </h3>
           <p class="text-ink/70 leading-relaxed mb-4">
-            Vieles, was uns belastet, entzieht sich zunächst der Sprache. In der Therapie geht es
-            deshalb darum, miteinander ins Gespräch zu kommen und Worte und Bilder für das zu
-            finden, was bisher unverständlich oder sinnlos erschien. Was sich anfangs nur als
-            Symptom zeigt, bekommt so nach und nach eine Bedeutung.
+            Die Sprechstunde ist der offizielle Einstieg in die ambulante Psychotherapie und
+            steht am Anfang jeder Behandlung. Sie dauert in der Regel 50 Minuten und ist noch
+            keine Therapie, sondern eine erste Orientierung: Wir hören zu, fragen nach und
+            verschaffen uns gemeinsam mit Ihnen ein Bild von Ihrer Situation.
           </p>
           <p class="text-ink/70 leading-relaxed mb-4">
-            Wir schauen gemeinsam darauf, wie Sie mit sich selbst, mit Ihren Bedürfnissen und mit
-            Konflikten im Kontakt mit anderen umgehen – und beziehen die Lebenserfahrungen ein, die Sie
-            geprägt haben. Aus dem wachsenden Verständnis entstehen neue Möglichkeiten, anders mit sich und
-            mit anderen umzugehen.
+            Am Ende steht eine Einschätzung, ob eine Psychotherapie angezeigt ist – und wenn ja,
+            welches Setting zu Ihnen passt: tiefenpsychologisch fundiert oder
+            verhaltenstherapeutisch, im Einzelgespräch oder in der Gruppe. Genau dafür arbeiten
+            wir zu zweit unter einem Dach: Sie müssen sich nicht vorab für ein Verfahren
+            entscheiden.
           </p>
           <p class="text-ink/70 leading-relaxed">
-            Eine Sitzung dauert in der Regel 50 Minuten und findet meist einmal pro Woche im
-            Sitzen statt. Wie lange eine Therapie insgesamt dauert, hängt von Ihrem Anliegen ab.
+            Ist eine andere Hilfe passender – etwa eine Beratungsstelle, eine ärztliche
+            Abklärung oder eine stationäre Behandlung –, sagen wir Ihnen das offen und
+            unterstützen Sie bei der Orientierung.
           </p>
         </div>
 
-        <!-- Ablauf -->
+        <!-- Schritte -->
         <div
           class="rounded-2xl bg-white border border-paper-200 p-7 md:p-8"
           v-bind="stepsReveal"
         >
-          <h3 class="font-serif text-2xl font-semibold text-ink mb-6">So beginnt eine Therapie</h3>
+          <h3 class="font-serif text-2xl font-semibold text-ink mb-6">Schritt für Schritt</h3>
           <ol class="space-y-6">
             <li v-for="(step, idx) in steps" :key="step.title" class="flex gap-4">
               <span class="shrink-0 w-9 h-9 rounded-full bg-petrol-600 text-white font-semibold flex items-center justify-center">
@@ -74,8 +76,12 @@ const stepsReveal = reveal({ delay: 120 })
 
 const steps = [
   {
+    title: 'Kontaktaufnahme',
+    text: 'Sie melden sich telefonisch zu unseren Sprechzeiten oder per E-Mail. Schreiben Sie gern direkt an das Verfahren, das Sie anspricht – oder an uns beide, wenn Sie unsicher sind.',
+  },
+  {
     title: 'Psychotherapeutische Sprechstunde',
-    text: 'Ein erstes Gespräch, in dem wir Ihr Anliegen kennenlernen und gemeinsam einschätzen, ob und welche Behandlung sinnvoll ist.',
+    text: 'Ein erstes Gespräch, in dem wir Ihr Anliegen kennenlernen und gemeinsam einschätzen, ob und welche Behandlung sinnvoll ist. Hier erfolgt auch die Indikationsstellung für das passende Setting.',
   },
   {
     title: 'Probatorische Sitzungen',

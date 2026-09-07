@@ -6,9 +6,10 @@
     1. Links bzw. Einbettungscode in die drei data-waitlist-embed-Slots setzen
        (siehe TODO(waitlist embed) weiter unten),
     2. <Wartelisten /> in src/views/HomePage.vue wieder einhängen – zwischen
-       <Team /> und <Kontakt /> und die Hintergrund-Abfolge der Sektionen
+       <Raeumlichkeiten /> und <Kontakt /> und die Hintergrund-Abfolge der Sektionen
        (weiss / paper-100 im Wechsel) entsprechend nachziehen,
-    3. den Menuepunkt "Wartelisten" in NavBar.vue und FooterSection.vue ergaenzen,
+    3. den Menuepunkt "Wartelisten" in NavBar.vue und FooterSection.vue ergaenzen
+       sowie den TODO(Warteliste)-Button im Hero (HeroSection.vue) umhaengen,
     4. den Abschnitt "Warteliste" in views/Datenschutz.vue wieder aufnehmen
        (siehe Git-Historie) und den genutzten Dienst dort benennen.
 -->

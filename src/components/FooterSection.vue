@@ -77,11 +77,12 @@ const router = useRouter()
 const year = new Date().getFullYear()
 
 const links = [
-  { href: '#praxis', label: 'Die Praxis' },
-  { href: '#psychotherapie', label: 'Psychotherapie' },
-  { href: '#therapieangebot', label: 'Therapieangebot' },
-  { href: '#team', label: 'Wir' },
-  { href: '#kontakt', label: 'Kontakt' },
+  { href: '#angebot', label: 'Unser Angebot & Verfahren' },
+  { href: '#ablauf', label: 'Ablauf & Erstgespräch' },
+  { href: '#kosten', label: 'Kosten & Rahmenbedingungen' },
+  { href: '#team', label: 'Über uns' },
+  { href: '#raeume', label: 'Räumlichkeiten' },
+  { href: '#kontakt', label: 'Kontakt & Anfahrt' },
 ]
 
 function goTo(href) {
