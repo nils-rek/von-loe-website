@@ -4,7 +4,7 @@ Guidance for Claude Code (claude.ai/code) when working in this repository.
 
 ## Project Overview
 
-Website for **Psychotherapie von Loe** — a practice for psychological psychotherapy at
+Website for **Psychotherapeutische Praxis von Loe** — a practice for psychological psychotherapy at
 Sofienstraße 13, 69115 Heidelberg, run by **Dr. Isabelle von Loe** (tiefenpsychologisch fundiert)
 and **Andreas von Loe** (Verhaltenstherapie & Schematherapie). Audience: gesetzlich Versicherte,
 Selektivverträge, Privatpatienten, Beihilfeberechtigte, Selbstzahler. **The "Privatpraxis" framing
@@ -36,8 +36,8 @@ the NavBar smooth-scrolls to anchor IDs. Only `/impressum` and `/datenschutz` ar
 views (plus a catch-all 404). `NavBar`/`FooterSection` links use a `goTo()` helper that navigates to
 `/` first when on a sub-page, then scrolls to the hash.
 
-- `src/components/` — sections: `NavBar`, `HeroSection`, `DiePraxis`, `Psychotherapie`,
-  `Therapieangebot`, `Team`, `Kontakt`, `FooterSection`; plus `PraxisMark` (inline logo SVG).
+- `src/components/` — sections in page order: `NavBar`, `HeroSection`, `Therapieangebot`,
+  `Ablauf`, `Kosten`, `Team`, `Raeumlichkeiten`, `Kontakt`, `FooterSection`.
   `Wartelisten.vue` is **parked** — on disk but not mounted; its file header documents how to
   re-mount it once a waitlist provider is chosen.
 - `src/views/` — `HomePage`, `Impressum`, `Datenschutz`, `NotFound`
@@ -49,7 +49,9 @@ views (plus a catch-all 404). `NavBar`/`FooterSection` links use a `goTo()` help
 - `public/images/` — optimized WebP assets
 - `supporting_docs/` — source materials (CVs, logo, praxis photos). **Gitignored.**
 
-Section anchor IDs: `#top`, `#praxis`, `#psychotherapie`, `#therapieangebot`, `#team`, `#kontakt`.
+Section anchor IDs: `#top`, `#angebot`, `#ablauf`, `#kosten`, `#team`, `#raeume`, `#kontakt`.
+This structure follows the client's `Gliederung für die Homepage` in
+`supporting_docs/Homepage 05.09.26.docx` (iteration 4) — keep the two in sync.
 Sections alternate `bg-white` / `bg-paper-100`; keep that rhythm when adding or removing one
 (inner card surfaces flip with it).
 
@@ -61,7 +63,7 @@ the logo's green→violet→blue dandelion. Tokens in `tailwind.config.js`:
 - **petrol** (primary blue, CTAs) `600 #3f6fa6` · **moss** (green) `500 #63a05d` ·
   **iris** (violet) `500 #8e6fb3` · **paper** (warm off-white neutrals) · **ink** text `#2b3440`
 - Restraint: mostly white + petrol; moss/iris used sparingly. The three Verfahren cards in
-  `Therapieangebot` are color-coded moss / petrol / iris; the four Kosten cards in `DiePraxis` stay
+  `Therapieangebot` are color-coded moss / petrol / iris; the four Abrechnungs-cards in `Kosten` stay
   uniformly petrol so the section does not compete with them.
 - **Fonts**: Cormorant Garamond (serif, headings) + Source Sans 3 (sans, body).
 - **Icons**: inline Heroicons (outline) SVGs — no emoji.
@@ -69,18 +71,34 @@ the logo's green→violet→blue dandelion. Tokens in `tailwind.config.js`:
 
 ## Branding note
 
-Resolved in iteration 2. The delivered logo (`supporting_docs/logo_svg.txt`) reads "von Loe", not
-"am Bismarckplatz". Only its **dot circle** is used, recolored to the moss/petrol/iris palette and
-redrawn as `src/components/PraxisMark.vue` (inline SVG — sharp at every DPR); `public/favicon.svg`
-carries the same shape. The text wordmark stays typeset in `NavBar`/`Footer`.
-`public/images/mark.webp` is the old bitmap mark and is now unused.
+**Iteration 4 replaced the logo.** The current source is `supporting_docs/logo_transparent.png`
+(670×480): a dandelion whose seeds blow to the right, stacked over the wordmark
+"Psychotherapeutische Praxis von Loe". Everything in `public/` is derived from it with
+Python/Pillow — regenerate from the source, never by re-cropping a derivative:
+
+| asset | crop of the source | used by |
+| --- | --- | --- |
+| `images/logo-lockup.webp` | mark `(0,2,658,335)` left + wordmark `(28,346,658,479)` right, wordmark at 78 % of the mark height, gap 3 % | `NavBar`, `FooterSection` |
+| `images/logo-wide.webp` | mark only, `(0,2,658,335)`, 2:1 | hero motif, `NotFound` |
+| `images/logo-full.webp` | the logo as delivered, trimmed to its bbox | reserve (print/OG) |
+| `favicon.png` (128) + `apple-touch-icon.png` (180) | square crop of the seed head, `(205,85,465,345)`, palette-quantized | `index.html` |
+
+**The mark is 2:1 — never put it in a square box, that clips the flying seeds.** The delivered
+file stacks mark over wordmark, which makes the wordmark illegible at nav-bar height; hence the
+horizontal `logo-lockup`, which is the *only* place the name appears in the header and footer —
+**do not typeset the practice name next to the logo again.** The footer sets the lockup on a
+`bg-paper-50` plate because the wordmark's navy would vanish on `petrol-800`.
+
+The practice name is **"Psychotherapeutische Praxis von Loe"** everywhere (title, OG tags,
+Impressum, Datenschutz); the domain stays `psychotherapie-vonloe.de`. `favicon.svg`,
+`images/mark.webp` and `PraxisMark.vue` are gone — the artwork does not vectorize well.
 
 ## Pending real-content inputs (placeholders marked `[…]` / `TODO` in code)
 
 - **Kassenzulassung** — the biggest open item. The site now states that the practice bills the
   gesetzliche Krankenkassen and mentions Selektivverträge, but this is *planned, not confirmed*.
-  `DiePraxis.vue` carries a `TODO(Kassenzulassung)` comment and a visible iris-colored Hinweis box
-  under the cost cards; `Psychotherapie.vue` has a matching TODO on the Antragsverfahren wording.
+  `Kosten.vue` carries a `TODO(Kassenzulassung)` comment and a visible iris-colored Hinweis box
+  under the cost cards; `Ablauf.vue` has a matching TODO on the Antragsverfahren wording.
   **Confirm before launch and delete the Hinweis box.** Also: which Selektivverträge actually apply.
 - **Impressum**: Aufsichtsbehörde, Berufshaftpflicht, verantwortliche Person nach § 18 Abs. 2 MStV
   → `views/Impressum.vue` (the yellow warning box stays until these are filled)
@@ -88,10 +106,27 @@ carries the same shape. The text wordmark stays typeset in `NavBar`/`Footer`.
 - **Waitlist**: no provider chosen yet, so the section is unmounted. To bring it back, follow the
   instructions in the file header of `Wartelisten.vue` (this also means restoring the "Warteliste"
   section in `views/Datenschutz.vue` — see git history).
+- **Anfahrt** (new in iteration 4): the three cards in `Kontakt.vue` are a *draft* — tram/bus line
+  numbers, the nearest parking garage by name, and the floor/entrance are all generic. See the
+  `TODO(Anfahrt)` comment.
+- **Barrierefreiheit**: the client's Gliederung asks for it, but the actual accessibility of
+  Sofienstraße 13 is unknown, so nothing is claimed on the page. Add it to the Anfahrt card once
+  confirmed.
+- **Kontaktformular**: also in the Gliederung, deliberately not built — GitHub Pages has no
+  backend, so it needs an external provider (Formspree o. ä.) plus a Datenschutz section.
+- **Gruppensitzungen**: duration is phrased vaguely in `Kosten.vue` (`TODO(Gruppensitzung)`).
+- **Ausfallregelung**: no Absagefrist/Ausfallhonorar stated (`TODO(Ausfallregelung)` in
+  `Kosten.vue`) — add a fifth Rahmenbedingungen card once decided.
+- **Room photos**: `therapieraum`, `gruppenraum` and `gruppenraum-weit` are all the *same* room,
+  so `Raeumlichkeiten.vue` shows only one of them plus the hallway. More rooms (Einzelzimmer,
+  Wartebereich) would let the gallery grow back.
 
 Resolved in iteration 2: address, phone, the two role e-mail addresses
 (`tiefenpsychologie@` / `verhaltenstherapie@psychotherapie-vonloe.de`), telefonische
-Erreichbarkeit, both professional headshots, and the logo.
+Erreichbarkeit, both professional headshots.
+Resolved in iteration 4: the final logo, the practice name, the Startseite welcome copy and the
+overall section structure — all from `supporting_docs/Homepage 05.09.26.docx` and
+`logo_transparent.png`.
 
 ## Assets / images
 
