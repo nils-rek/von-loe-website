@@ -82,7 +82,7 @@
             <div class="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-moss-100 via-iris-100 to-petrol-100 opacity-70 blur-sm"></div>
             <div class="w-64 sm:w-72 md:w-80 aspect-[4/5] rounded-2xl overflow-hidden shadow-xl shadow-petrol-900/10 ring-1 ring-black/5">
               <img
-                src="/images/praxis-gespraech.webp"
+                src="/images/praxis-gespraech-v2.webp"
                 alt="Ruhige Gesprächssituation in hellen Praxisräumen"
                 width="576"
                 height="720"

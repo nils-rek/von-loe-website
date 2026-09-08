@@ -161,13 +161,18 @@ The two were **not shot at the same distance**: `isabelle_headshot.jpg` is used 
 size and at the same height in the card (hair top ≈ 12 %, chin ≈ 58 % of the frame). `object-cover`
 cannot fix that — it only pans, it cannot zoom — so re-crop the source if a headshot is replaced.
 
-`images/praxis-gespraech.webp` (576×720, 4:5, q82) is the hero photo added in iteration 5. It comes
+`images/praxis-gespraech-v2.webp` (576×720, 4:5, q82) is the hero photo added in iteration 5. It comes
 from the image embedded in `Homepage 0709.26.docx` (`word/media/image1.jpg`, 1280×720), cropped
 **`(0,0,576,720)` — flush with the left edge**, so the out-of-focus patient silhouette in the
 foreground stays in frame; a centred crop drops it and the scene reads as a lone portrait. The
 uncropped 16:9 frame was tried and rejected: a landscape image beside the long Eingangstext is
 either tiny or leaves a large hole under it, and fixing that needed the whole hero restructured.
 The portrait keeps the plain side-by-side hero (text left, photo right from `md`, stacked below).
+The `-v2` in the filename is a cache-bust: on launch day the plain `praxis-gespraech.webp` URL
+served three different crops within an hour, and GitHub Pages sends `Cache-Control: max-age=600`,
+so visitors kept seeing a stale picture while the server already had the new one. **Give a
+published image a new filename whenever its content changes** — overwriting it in place is not
+enough.
 Keep an eye on the fold: at 1440×900 the „Termin anfragen“ button ends at ~871 px, so any extra
 copy or type size in the hero pushes the primary CTA out of view. **It is a stock/AI-looking image, not a photo of the practice or of either therapist**
 — keep the alt text neutral so it never reads as a therapist or a patient. The former hero photo
