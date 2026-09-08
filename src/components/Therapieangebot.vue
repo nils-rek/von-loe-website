@@ -11,8 +11,8 @@
         </h2>
         <div class="accent-rule mx-auto mt-5"></div>
         <p class="mt-6 text-ink/70 leading-relaxed">
-          Psychotherapie unterstützt Sie dabei, psychische, körperliche und psychosomatische
-          Beschwerden zu verstehen und zu verarbeiten. Ihr eigentliches Mittel ist dabei das
+          Psychotherapie unterstützt Sie dabei, psychische und psychosomatische Beschwerden
+          zu verstehen und zu verarbeiten. Ihr eigentliches Mittel ist dabei das
           Gespräch zwischen zwei Menschen.
         </p>
         <p class="mt-4 text-ink/65 leading-relaxed">
@@ -152,7 +152,7 @@ const settings = [
   },
   {
     title: 'Gruppentherapie',
-    text: 'Sie arbeiten mit Menschen, die Ähnliches erleben. Die Rückmeldungen der Gruppe machen Muster sichtbar, die im Einzelkontakt oft verborgen bleiben.',
+    text: 'Sie arbeiten mit Menschen, die Ähnliches erleben. Die Interaktionen in der Gruppe machen Muster sichtbar, die im Einzelkontakt oft verborgen bleiben.',
     borderClass: 'border-t-iris-300',
     dotClass: 'bg-iris-400',
     suited: [

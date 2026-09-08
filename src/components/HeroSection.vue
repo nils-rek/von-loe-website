@@ -1,7 +1,7 @@
 <template>
   <section
     id="top"
-    class="relative min-h-[92vh] flex items-center overflow-hidden bg-gradient-to-br from-paper-100 via-paper-50 to-petrol-50/60"
+    class="relative min-h-screen md:min-h-[92vh] flex items-center overflow-hidden bg-gradient-to-br from-paper-100 via-paper-50 to-petrol-50/60"
   >
     <!-- Weiche Farbflächen + die Bildmarke des Logos als Motiv -->
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -11,37 +11,48 @@
       <img
         src="/images/logo-wide.webp"
         alt=""
-        width="658"
-        height="333"
+        width="714"
+        height="354"
         class="absolute top-16 right-2 md:right-10 w-56 md:w-72 lg:w-80 opacity-40 animate-float"
         loading="eager"
       />
     </div>
 
-    <div class="relative max-w-6xl mx-auto px-5 md:px-6 py-28 md:py-32 w-full">
-      <div class="grid md:grid-cols-[1.05fr_0.95fr] gap-12 md:gap-16 items-center">
+    <div class="relative max-w-6xl mx-auto px-5 md:px-6 py-24 w-full">
+      <div class="grid md:grid-cols-[1.15fr_0.85fr] gap-12 md:gap-16 items-center">
         <!-- Text -->
         <div class="order-2 md:order-1">
-          <p class="animate-hero-fade-in text-petrol-600 font-medium tracking-[0.18em] text-xs md:text-sm uppercase mb-5">
+          <p class="animate-hero-fade-in text-petrol-600 font-medium tracking-[0.18em] text-xs md:text-sm uppercase mb-4">
             Psychologische Psychotherapie in Heidelberg
           </p>
-          <h1 class="animate-hero-fade-in-1 font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-ink leading-[1.1] tracking-tight mb-6">
-            Willkommen in unserer<br class="hidden lg:block" /> gemeinsamen Praxis
+          <h1 class="animate-hero-fade-in-1 font-serif text-4xl md:text-5xl font-semibold text-ink leading-[1.1] tracking-tight mb-5">
+            Willkommen in unserer Praxis
           </h1>
-          <div class="animate-hero-fade-in-2 accent-rule mb-7"></div>
-          <p class="animate-hero-fade-in-2 text-lg md:text-xl text-ink/75 leading-relaxed mb-5 max-w-xl">
-            Die Suche nach der richtigen psychotherapeutischen Unterstützung kann
-            herausfordernd sein. Welches Therapieverfahren passt zu meiner aktuellen
-            Lebenssituation? Ist eine Einzel- oder eine Gruppentherapie für mich sinnvoll?
+          <div class="animate-hero-fade-in-2 accent-rule mb-6"></div>
+          <p class="animate-hero-fade-in-2 text-lg text-ink/75 leading-relaxed mb-4 max-w-2xl">
+            Menschen können in Situationen gelangen, in denen die bisherigen
+            Bewältigungsmechanismen, die im Laufe des Lebens entstanden sind, nicht mehr gut
+            helfen. Gleichzeitig stehen oft noch keine neuen Wege (i. S. von Fähigkeiten) zur
+            Verfügung, was ein äußerst leidvoller Zustand sein kann. Gefühle wie Traurigkeit,
+            Ängste aber auch Wut oder schließlich Resignation können vorherrschend sein.
           </p>
-          <p class="animate-hero-fade-in-2 text-base md:text-lg text-ink/70 leading-relaxed mb-8 max-w-xl">
-            In unserer Praxis bündeln wir zwei bewährte Therapieformen unter einem Dach:
-            Tiefenpsychologisch fundierte Psychotherapie und Kognitive Verhaltenstherapie.
-            Sie müssen nicht im Voraus wissen, welcher Weg der richtige für Sie ist. In
-            unseren Erstgesprächen nehmen wir uns Zeit für eine sorgfältige Diagnostik und
-            Indikationsstellung. Gemeinsam klären wir Ihre Anliegen und finden genau das
-            Setting – ob tiefenpsychologisch oder verhaltenstherapeutisch, ob im Einzel-
-            oder im Gruppenrahmen –, das Sie bestmöglich auf Ihrem Weg unterstützt.
+          <p class="animate-hero-fade-in-2 text-base md:text-lg text-ink/70 leading-relaxed mb-4 max-w-2xl">
+            Sich Hilfe zu suchen und sich für eine Psychotherapie zu entscheiden, ist ein
+            mutiger Schritt. Denn Psychotherapie bedeutet die Bereitschaft, sich mit sich
+            selbst, seinen Problemen und inneren Konflikten auseinanderzusetzen.
+          </p>
+          <p class="animate-hero-fade-in-2 text-base md:text-lg text-ink/70 leading-relaxed mb-4 max-w-2xl">
+            Die Suche nach psychotherapeutischer Unterstützung ist aber meist mit
+            verschiedenen Fragen verbunden. Beispielsweise welches Therapieverfahren ist für
+            mich das richtige? Ist eine Einzel- oder Gruppentherapie sinnvoll?
+          </p>
+          <p class="animate-hero-fade-in-3 text-base md:text-lg text-ink/70 leading-relaxed mb-7 max-w-2xl">
+            In unserer Praxis bündeln wir zwei bewährte Therapieformen: tiefenpsychologisch
+            fundierte Psychotherapie und kognitive Verhaltenstherapie. Sie müssen nicht im
+            Voraus wissen, welcher Weg der richtige für Sie ist. Im Erstgespräch nehmen wir
+            uns Zeit für eine sorgfältige Diagnostik und Indikationsstellung. Gemeinsam
+            klären wir Ihre Anliegen und finden das Setting, das Sie bestmöglich auf Ihrem
+            Weg unterstützt.
           </p>
           <div class="animate-hero-fade-in-3 flex flex-col sm:flex-row gap-4">
             <!--
@@ -69,12 +80,12 @@
         <div class="order-1 md:order-2 flex justify-center md:justify-end animate-hero-fade-in-4">
           <div class="relative">
             <div class="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-moss-100 via-iris-100 to-petrol-100 opacity-70 blur-sm"></div>
-            <div class="w-64 h-[22rem] sm:w-72 sm:h-[26rem] md:w-80 md:h-[30rem] rounded-2xl overflow-hidden shadow-xl shadow-petrol-900/10 ring-1 ring-black/5">
+            <div class="w-64 sm:w-72 md:w-80 aspect-[4/5] rounded-2xl overflow-hidden shadow-xl shadow-petrol-900/10 ring-1 ring-black/5">
               <img
-                src="/images/flur-hell.webp"
-                alt="Heller Flur der Praxis mit Fischgrätparkett und hohen Decken"
-                width="1066"
-                height="1600"
+                src="/images/praxis-gespraech.webp"
+                alt="Ruhige Gesprächssituation in hellen Praxisräumen"
+                width="576"
+                height="720"
                 class="w-full h-full object-cover"
                 loading="eager"
                 fetchpriority="high"

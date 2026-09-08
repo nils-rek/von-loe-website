@@ -14,7 +14,7 @@
         <img
           src="/images/logo-lockup.webp"
           alt="Psychotherapeutische Praxis von Loe"
-          width="1367"
+          width="1636"
           height="240"
           class="h-9 sm:h-10 md:h-11 w-auto"
           fetchpriority="high"

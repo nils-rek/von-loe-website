@@ -51,7 +51,8 @@ views (plus a catch-all 404). `NavBar`/`FooterSection` links use a `goTo()` help
 
 Section anchor IDs: `#top`, `#angebot`, `#ablauf`, `#kosten`, `#team`, `#raeume`, `#kontakt`.
 This structure follows the client's `Gliederung für die Homepage` in
-`supporting_docs/Homepage 05.09.26.docx` (iteration 4) — keep the two in sync.
+`supporting_docs/Homepage 05.09.26.docx` (iteration 4), amended by the correction list in
+`supporting_docs/Homepage 0709.26.docx` (iteration 5) — keep the three in sync.
 Sections alternate `bg-white` / `bg-paper-100`; keep that rhythm when adding or removing one
 (inner card surfaces flip with it).
 
@@ -71,23 +72,31 @@ the logo's green→violet→blue dandelion. Tokens in `tailwind.config.js`:
 
 ## Branding note
 
-**Iteration 4 replaced the logo.** The current source is `supporting_docs/logo_transparent.png`
-(670×480): a dandelion whose seeds blow to the right, stacked over the wordmark
-"Psychotherapeutische Praxis von Loe". Everything in `public/` is derived from it with
-Python/Pillow — regenerate from the source, never by re-cropping a derivative:
+**Iteration 5 refreshed the logo.** The current source is `supporting_docs/logo-neu.png`
+(822×564, transparent): the same dandelion, but the wordmark is now uniform — "von Loe" is set
+in the same navy grotesque as "Psychotherapeutische Praxis" (previously a green script) and is
+flanked by two hairlines. Everything in `public/` is derived from it with Python/Pillow —
+regenerate from the source, never by re-cropping a derivative:
 
-| asset | crop of the source | used by |
-| --- | --- | --- |
-| `images/logo-lockup.webp` | mark `(0,2,658,335)` left + wordmark `(28,346,658,479)` right, wordmark at 78 % of the mark height, gap 3 % | `NavBar`, `FooterSection` |
-| `images/logo-wide.webp` | mark only, `(0,2,658,335)`, 2:1 | hero motif, `NotFound` |
-| `images/logo-full.webp` | the logo as delivered, trimmed to its bbox | reserve (print/OG) |
-| `favicon.png` (128) + `apple-touch-icon.png` (180) | square crop of the seed head, `(205,85,465,345)`, palette-quantized | `index.html` |
+| asset | crop of the source | result | used by |
+| --- | --- | --- | --- |
+| `images/logo-lockup.webp` | mark `(24,26,738,380)` left + wordmark `(36,410,802,536)` right, wordmark at 78 % of the mark height, gap 3 % of the mark width | 1636×240 (6.8:1) | `NavBar`, `FooterSection` |
+| `images/logo-wide.webp` | mark only, `(24,26,738,380)`, 2:1 | 714×354 | hero motif, `NotFound` |
+| `images/logo-full.webp` | the logo trimmed to its bbox, `(24,26,802,536)` | 778×510 | reserve (print/OG) |
+| `favicon.png` (128) + `apple-touch-icon.png` (180) | square crop of the seed head, `(250,100,550,400)` | palette (`P`) | `index.html` |
+
+The icons must be quantized with `Image.quantize(colors=255, method=Image.FASTOCTREE)` on the
+**RGBA** crop — that is the only path that keeps the alpha channel in the palette. Going through
+`convert('RGB')` first fills the transparent area with black.
 
 **The mark is 2:1 — never put it in a square box, that clips the flying seeds.** The delivered
 file stacks mark over wordmark, which makes the wordmark illegible at nav-bar height; hence the
 horizontal `logo-lockup`, which is the *only* place the name appears in the header and footer —
-**do not typeset the practice name next to the logo again.** The footer sets the lockup on a
-`bg-paper-50` plate because the wordmark's navy would vanish on `petrol-800`.
+**do not typeset the practice name next to the logo again.** The lockup carries a soft white halo
+around the wordmark (baked into the source), so the footer keeps it on a `bg-paper-50` plate — on
+`petrol-800` both the navy type and the halo would show badly. At `h-9` (36 px) the lockup is
+245 px wide and still fits next to the burger button at a 375 px viewport; re-check that if the
+lockup is ever regenerated at a different wordmark ratio.
 
 The practice name is **"Psychotherapeutische Praxis von Loe"** everywhere (title, OG tags,
 Impressum, Datenschutz); the domain stays `psychotherapie-vonloe.de`. `favicon.svg`,
@@ -109,24 +118,24 @@ Impressum, Datenschutz); the domain stays `psychotherapie-vonloe.de`. `favicon.s
 - **Anfahrt** (new in iteration 4): the three cards in `Kontakt.vue` are a *draft* — tram/bus line
   numbers, the nearest parking garage by name, and the floor/entrance are all generic. See the
   `TODO(Anfahrt)` comment.
-- **Barrierefreiheit**: the client's Gliederung asks for it, but the actual accessibility of
-  Sofienstraße 13 is unknown, so nothing is claimed on the page. Add it to the Anfahrt card once
-  confirmed.
+- **Barrierefreiheit**: iteration 5 confirmed **a lift is present** (stated in the "Lage" card).
+  Steps at the street entrance and a step-free WC are still unconfirmed — nothing else is claimed.
 - **Kontaktformular**: also in the Gliederung, deliberately not built — GitHub Pages has no
   backend, so it needs an external provider (Formspree o. ä.) plus a Datenschutz section.
 - **Gruppensitzungen**: duration is phrased vaguely in `Kosten.vue` (`TODO(Gruppensitzung)`).
 - **Ausfallregelung**: no Absagefrist/Ausfallhonorar stated (`TODO(Ausfallregelung)` in
   `Kosten.vue`) — add a fifth Rahmenbedingungen card once decided.
 - **Room photos**: `therapieraum`, `gruppenraum` and `gruppenraum-weit` are all the *same* room,
-  so `Raeumlichkeiten.vue` shows only one of them plus the hallway. More rooms (Einzelzimmer,
-  Wartebereich) would let the gallery grow back.
+  so `Raeumlichkeiten.vue` shows only one of them plus the two hallway shots. More rooms
+  (Einzelzimmer, Wartebereich) would let the gallery grow beyond three tiles.
 
 Resolved in iteration 2: address, phone, the two role e-mail addresses
 (`tiefenpsychologie@` / `verhaltenstherapie@psychotherapie-vonloe.de`), telefonische
 Erreichbarkeit, both professional headshots.
-Resolved in iteration 4: the final logo, the practice name, the Startseite welcome copy and the
-overall section structure — all from `supporting_docs/Homepage 05.09.26.docx` and
-`logo_transparent.png`.
+Resolved in iteration 4: the practice name, the Startseite welcome copy and the
+overall section structure — all from `supporting_docs/Homepage 05.09.26.docx`.
+Resolved in iteration 5 (from `supporting_docs/Homepage 0709.26.docx` and `logo-neu.png`): the
+final logo, the full Eingangstext, the Räumlichkeiten copy, the hero photo and the lift.
 
 ## Assets / images
 
@@ -135,6 +144,13 @@ the OS FS tool, **not** ImageMagick). Keep explicit `width`/`height` on `<img>` 
 below-fold photos use `loading="lazy"`; the Team headshots are `loading="eager"` (native lazy was
 unreliable there). Both headshots are 640×797 WebP (q82) derived from the 912×1136 originals in
 `supporting_docs/` — the 0.8 aspect matches the `w-32 h-40` slot, so `object-cover` crops nothing.
+
+`images/praxis-gespraech.webp` (576×720, 4:5, q82) is the hero photo added in iteration 5. It comes
+from the image embedded in `Homepage 0709.26.docx` (`word/media/image1.jpg`, 1280×720), cropped
+`(288,0,864,720)`. **It is a stock/AI-looking image, not a photo of the practice or of either
+therapist** — keep the alt text neutral so it never reads as a therapist or a patient. The former
+hero photo `flur-hell.webp` moved into the `Raeumlichkeiten` gallery, which therefore runs
+`sm:grid-cols-2 lg:grid-cols-3` with three tiles.
 
 ## Verifying UI changes (screenshots)
 

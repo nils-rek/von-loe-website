@@ -32,9 +32,7 @@
           <p class="text-ink/70 leading-relaxed mb-4">
             Am Ende steht eine Einschätzung, ob eine Psychotherapie angezeigt ist – und wenn ja,
             welches Setting zu Ihnen passt: tiefenpsychologisch fundiert oder
-            verhaltenstherapeutisch, im Einzelgespräch oder in der Gruppe. Genau dafür arbeiten
-            wir zu zweit unter einem Dach: Sie müssen sich nicht vorab für ein Verfahren
-            entscheiden.
+            verhaltenstherapeutisch, im Einzelgespräch oder in der Gruppe.
           </p>
           <p class="text-ink/70 leading-relaxed">
             Ist eine andere Hilfe passender – etwa eine Beratungsstelle, eine ärztliche
@@ -77,11 +75,11 @@ const stepsReveal = reveal({ delay: 120 })
 const steps = [
   {
     title: 'Kontaktaufnahme',
-    text: 'Sie melden sich telefonisch zu unseren Sprechzeiten oder per E-Mail. Schreiben Sie gern direkt an das Verfahren, das Sie anspricht – oder an uns beide, wenn Sie unsicher sind.',
+    text: 'Sie melden sich telefonisch zu unseren Sprechzeiten oder per E-Mail. Schreiben Sie gerne an die E-Mail-Adresse des Therapieverfahrens, das Sie persönlich vorrangig anspricht.',
   },
   {
-    title: 'Psychotherapeutische Sprechstunde',
-    text: 'Ein erstes Gespräch, in dem wir Ihr Anliegen kennenlernen und gemeinsam einschätzen, ob und welche Behandlung sinnvoll ist. Hier erfolgt auch die Indikationsstellung für das passende Setting.',
+    title: 'Psychotherapeutische Sprechstunden',
+    text: 'Erste Gespräche, in denen wir Ihr Anliegen kennenlernen und gemeinsam einschätzen, ob und welche Behandlung sinnvoll ist. Hier erfolgt auch die Indikationsstellung für das passende Setting.',
   },
   {
     title: 'Probatorische Sitzungen',

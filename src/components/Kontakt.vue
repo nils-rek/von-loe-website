@@ -12,9 +12,8 @@
         <div class="accent-rule mx-auto mt-5"></div>
         <p class="mt-6 text-ink/70 leading-relaxed">
           Für ein erstes Kennenlernen oder Fragen zum Ablauf erreichen Sie uns telefonisch
-          oder per E-Mail. Schreiben Sie gern direkt an die Kollegin oder den Kollegen, dessen
-          Verfahren zu Ihrem Anliegen passt – wenn Sie unsicher sind, melden Sie sich einfach
-          bei uns beiden. Wir melden uns zeitnah zurück.
+          oder per E-Mail. Schreiben Sie gerne an die E-Mail-Adresse des Therapieverfahrens,
+          das Sie persönlich vorrangig anspricht. Wir melden uns zeitnah zurück.
         </p>
       </div>
 
@@ -80,7 +79,8 @@
         <!--
           TODO(Anfahrt): Entwurf – bitte vor dem Livegang prüfen und konkretisieren
           (Linien­nummern der Straßenbahnen/Busse, Name und Entfernung des nächstgelegenen
-          Parkhauses, Etage/Zugang der Praxis sowie eine Angabe zur Barrierefreiheit).
+          Parkhauses, Etage/Zugang der Praxis). Der Aufzug ist bestätigt; Stufen am
+          Hauseingang und ein barrierefreies WC sind weiterhin offen.
         -->
         <div class="rounded-2xl bg-gradient-to-br from-petrol-50 to-paper-100 border border-paper-200 p-7 md:p-8" v-bind="rightReveal">
           <h3 class="font-serif text-2xl font-semibold text-ink mb-6">Anfahrt</h3>
@@ -127,7 +127,7 @@ const routes = [
   },
   {
     title: 'Lage',
-    text: 'Die Praxis liegt zentral in unmittelbarer Nähe des Bismarckplatzes und ist auch zu Fuß oder mit dem Rad gut zu erreichen.',
+    text: 'Die Praxis liegt zentral in unmittelbarer Nähe des Bismarckplatzes und ist auch zu Fuß oder mit dem Rad gut zu erreichen. Ein Aufzug ist vorhanden.',
     icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" />',
   },
 ]

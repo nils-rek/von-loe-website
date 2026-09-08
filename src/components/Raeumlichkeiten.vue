@@ -7,13 +7,12 @@
           Räumlichkeiten
         </p>
         <h2 class="text-3xl md:text-4xl font-semibold text-ink leading-snug">
-          Ein Ort, an dem Sie zur Ruhe kommen
+          Ein Ort, an dem Sie zu sich kommen können
         </h2>
         <div class="accent-rule mx-auto mt-5"></div>
         <p class="mt-6 text-ink/70 leading-relaxed">
           Unsere Praxis liegt in der Sofienstraße in Heidelberg, wenige Schritte vom
-          Bismarckplatz entfernt. Helle Altbauräume mit hohen Decken und Fischgrätparkett –
-          ruhig genug, um in Ruhe sprechen zu können.
+          Verkehrsknotenpunkt Bismarckplatz entfernt.
         </p>
       </div>
 
@@ -36,26 +35,26 @@
             Räume für Einzel- und Gruppengespräche
           </h3>
           <p class="text-ink/70 leading-relaxed mb-4">
-            In unseren hellen und freundlichen Räumlichkeiten werden Sie sich vom ersten Moment
-            an gut aufgehoben fühlen. Neben den Behandlungszimmern für die Einzeltherapie steht
-            ein eigener, großzügiger Gruppenraum zur Verfügung.
+            In den hellen Altbauräumen können Sie in Ruhe über Ihre Anliegen sprechen. Neben
+            den Behandlungszimmern für die Einzeltherapie steht ein großzügiger Gruppenraum
+            zur Verfügung.
           </p>
           <p class="text-ink/70 leading-relaxed">
-            Uns ist ein wertschätzender, unaufgeregter Umgang wichtig. Sie bestimmen das Tempo;
-            wir bringen unsere fachliche Expertise ein.
+            Uns ist ein wertschätzender, unaufgeregter Umgang wichtig. Sie bestimmen das Tempo
+            – wir bringen unsere fachliche Expertise ein.
           </p>
         </div>
       </div>
 
       <!-- Galerie -->
-      <div class="grid sm:grid-cols-2 gap-6" v-bind="galleryReveal">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" v-bind="galleryReveal">
         <figure v-for="p in gallery" :key="p.src">
           <img
             :src="p.src"
             :alt="p.alt"
             :width="p.width"
             :height="p.height"
-            class="w-full h-64 md:h-80 object-cover rounded-2xl ring-1 ring-black/5 shadow-sm"
+            class="w-full h-56 md:h-64 object-cover rounded-2xl ring-1 ring-black/5 shadow-sm"
             :class="p.objectClass"
             loading="lazy"
           />
@@ -76,8 +75,8 @@ const textReveal = reveal({ delay: 120 })
 const galleryReveal = reveal({ delay: 60 })
 
 // Von den gelieferten Praxisfotos zeigen therapieraum / gruppenraum / gruppenraum-weit
-// denselben Raum. Deshalb hier nur ein Weitwinkel plus der Flur – sobald weitere Räume
-// fotografiert sind (Einzelzimmer, Wartebereich), kann die Galerie wieder wachsen.
+// denselben Raum. Deshalb hier nur ein Weitwinkel plus die beiden Flurmotive – sobald
+// weitere Räume fotografiert sind (Einzelzimmer, Wartebereich), kann die Galerie wachsen.
 const gallery = [
   {
     src: '/images/gruppenraum-weit.webp',
@@ -87,13 +86,20 @@ const gallery = [
     height: 1066,
   },
   {
-    src: '/images/flur-kurve.webp',
-    alt: 'Geschwungener Flur der Praxis mit Fischgrätparkett und Tageslicht',
+    src: '/images/flur-hell.webp',
+    alt: 'Heller Flur der Praxis mit Fischgrätparkett und hohen Decken',
     caption: 'Flur',
     width: 1066,
     height: 1600,
+  },
+  {
+    src: '/images/flur-kurve.webp',
+    alt: 'Geschwungener Flur der Praxis mit Fischgrätparkett und Tageslicht',
+    caption: 'Eingangsbereich',
+    width: 1066,
+    height: 1600,
     // Hochformat: mittiger Zuschnitt zeigt nur Wand – Ausschnitt nach unten verschieben
-    objectClass: 'object-[center_72%]',
+    objectClass: 'object-[center_85%]',
   },
 ]
 </script>
