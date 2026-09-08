@@ -15,11 +15,12 @@
       <div class="accent-rule mb-10"></div>
 
       <div class="space-y-8 text-ink/80 leading-relaxed">
-        <p class="text-sm text-iris-700 bg-iris-50 border border-iris-100 rounded-lg px-4 py-3">
-          Hinweis: Diese Datenschutzerklärung ist eine sorgfältig vorbereitete Vorlage. Bitte
-          vor Veröffentlichung rechtlich prüfen lassen.
-        </p>
-
+        <!--
+          TODO(Datenschutz): Dieser Text ist eine sorgfältig vorbereitete Vorlage und wurde
+          noch nicht rechtlich geprüft. Der sichtbare Hinweiskasten wurde für die
+          Abstimmungsfassung entfernt – vor einer echten Veröffentlichung prüfen lassen
+          und das "Stand:"-Datum bestätigen.
+        -->
         <section>
           <h2 class="font-serif text-xl font-semibold text-ink mb-2">1. Verantwortlicher</h2>
           <p>
@@ -95,7 +96,7 @@
           </p>
         </section>
 
-        <p class="text-sm text-ink/50">Stand: August 2026</p>
+        <p class="text-sm text-ink/50">Stand: September 2026</p>
       </div>
     </div>
 

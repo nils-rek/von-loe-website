@@ -46,13 +46,13 @@
           persönlich.
         </p>
 
-        <!-- TODO(Kassenzulassung): Vor dem Livegang bestätigen und diesen Hinweiskasten entfernen. -->
-        <p class="mt-6 text-sm text-iris-700 bg-iris-50 border border-iris-100 rounded-lg px-4 py-3">
-          Hinweis (nur intern, vor Veröffentlichung entfernen): Die Angaben zur Kassenzulassung
-          und zu den Selektivverträgen sind noch zu bestätigen – insbesondere, ob die Abrechnung
-          mit den gesetzlichen Krankenkassen zum Start bereits möglich ist und welche
-          Selektivverträge konkret gelten.
-        </p>
+        <!--
+          TODO(Kassenzulassung): Die Angaben zur Abrechnung mit den gesetzlichen Krankenkassen
+          und zu den Selektivverträgen sind weiterhin UNBESTÄTIGT. Der sichtbare Hinweiskasten
+          wurde für die Abstimmungsfassung entfernt – vor einer echten Veröffentlichung muss
+          geklärt sein, ob zum Start bereits mit den Kassen abgerechnet wird und welche
+          Selektivverträge gelten.
+        -->
       </div>
 
       <!-- Rahmenbedingungen -->

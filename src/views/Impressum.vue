@@ -15,11 +15,16 @@
       <div class="accent-rule mb-10"></div>
 
       <div class="space-y-8 text-ink/80 leading-relaxed">
-        <p class="text-sm text-iris-700 bg-iris-50 border border-iris-100 rounded-lg px-4 py-3">
-          Hinweis: Dieses Impressum enthält Platzhalter in eckigen Klammern. Bitte vor
-          Veröffentlichung vervollständigen und rechtlich prüfen lassen.
-        </p>
-
+        <!--
+          TODO(Impressum): Vor einer echten Veröffentlichung rechtlich prüfen lassen.
+          Offen bzw. angenommen:
+          – Aufsichtsbehörde: als Regierungspräsidium Stuttgart eingetragen (in
+            Baden-Württemberg zentral für Approbationen der Heilberufe zuständig) – bitte
+            von der Praxis bestätigen lassen.
+          – Berufshaftpflichtversicherung: Abschnitt entfernt, weil Versicherer und
+            räumlicher Geltungsbereich nicht vorliegen. Wieder aufnehmen, sobald bekannt
+            (Angabe nach DL-InfoV).
+        -->
         <section>
           <h2 class="font-serif text-xl font-semibold text-ink mb-2">Angaben gemäß § 5 DDG</h2>
           <p>
@@ -50,8 +55,7 @@
             Jägerstraße 40, 70174 Stuttgart.
           </p>
           <p class="mt-3">
-            Zuständige Approbations- und Aufsichtsbehörde: [zuständige Behörde, z.&nbsp;B.
-            Regierungspräsidium Stuttgart].
+            Zuständige Approbations- und Aufsichtsbehörde: Regierungspräsidium Stuttgart.
           </p>
           <p class="mt-3">
             Es gelten insbesondere folgende berufsrechtliche Regelungen: Psychotherapeutengesetz
@@ -62,17 +66,9 @@
         </section>
 
         <section>
-          <h2 class="font-serif text-xl font-semibold text-ink mb-2">Berufshaftpflichtversicherung</h2>
-          <p>
-            [Name und Sitz des Versicherers]<br />
-            Räumlicher Geltungsbereich: [Angabe]
-          </p>
-        </section>
-
-        <section>
           <h2 class="font-serif text-xl font-semibold text-ink mb-2">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
           <p>
-            [Name], Sofienstraße 13, 69115 Heidelberg
+            Dr. Isabelle von Loe und Andreas von Loe, Sofienstraße 13, 69115 Heidelberg
           </p>
         </section>
 

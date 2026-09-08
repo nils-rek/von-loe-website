@@ -102,16 +102,28 @@ The practice name is **"Psychotherapeutische Praxis von Loe"** everywhere (title
 Impressum, Datenschutz); the domain stays `psychotherapie-vonloe.de`. `favicon.svg`,
 `images/mark.webp` and `PraxisMark.vue` are gone — the artwork does not vectorize well.
 
-## Pending real-content inputs (placeholders marked `[…]` / `TODO` in code)
+## Pending real-content inputs (`TODO` comments in code)
 
-- **Kassenzulassung** — the biggest open item. The site now states that the practice bills the
+> **The site is in an „Abstimmungsfassung“ (iteration 5).** Every *visible* placeholder and
+> warning box was removed so the page can be deployed and reviewed with the practice owners
+> without reading as a construction site. **Nothing below was actually resolved by that** — the
+> facts are still unconfirmed, they are just no longer flagged on the page. Before the site is
+> really announced, work through this list; the `TODO(...)` comments in the components mark
+> every spot. Do not add new user-facing warning boxes — keep open items in `TODO` comments.
+
+- **Kassenzulassung** — the biggest open item. The site states that the practice bills the
   gesetzliche Krankenkassen and mentions Selektivverträge, but this is *planned, not confirmed*.
-  `Kosten.vue` carries a `TODO(Kassenzulassung)` comment and a visible iris-colored Hinweis box
-  under the cost cards; `Ablauf.vue` has a matching TODO on the Antragsverfahren wording.
-  **Confirm before launch and delete the Hinweis box.** Also: which Selektivverträge actually apply.
-- **Impressum**: Aufsichtsbehörde, Berufshaftpflicht, verantwortliche Person nach § 18 Abs. 2 MStV
-  → `views/Impressum.vue` (the yellow warning box stays until these are filled)
-- **Datenschutz**: confirm the `Stand:` date → `views/Datenschutz.vue`
+  `Kosten.vue` carries a `TODO(Kassenzulassung)` comment where the visible Hinweis box used to be;
+  `Ablauf.vue` has a matching TODO on the Antragsverfahren wording. Also: which Selektivverträge
+  actually apply.
+- **Impressum** (`views/Impressum.vue`, `TODO(Impressum)`): the bracket placeholders are gone, but
+  two of the three were **assumed, not confirmed** — Aufsichtsbehörde is written as
+  „Regierungspräsidium Stuttgart“ (centrally responsible for Approbationen in BW) and the
+  § 18 Abs. 2 MStV entry names both owners. The **Berufshaftpflicht section was deleted** because
+  insurer and Geltungsbereich are unknown; put it back once they are. The whole Impressum still
+  needs a legal check.
+- **Datenschutz** (`views/Datenschutz.vue`, `TODO(Datenschutz)`): `Stand: September 2026` is set,
+  but the text is an unreviewed template — needs a legal check.
 - **Waitlist**: no provider chosen yet, so the section is unmounted. To bring it back, follow the
   instructions in the file header of `Wartelisten.vue` (this also means restoring the "Warteliste"
   section in `views/Datenschutz.vue` — see git history).
@@ -155,7 +167,13 @@ embedded in `Homepage 0709.26.docx` (`word/media/image1.jpg`), **uncropped**. Ev
 or cut the therapist's arm, so the hero shows the full 16:9 frame: no fixed slot, no `object-cover`,
 just `w-full h-auto`. Because a 16:9 image gets too narrow in a half column, the hero grid only
 splits into two columns at **`lg`** — below that the photo stacks above the text at up to
-`max-w-md`. **It is a stock/AI-looking image, not a photo of the practice or of either therapist**
+`max-w-md`. The hero is laid out in **two blocks, not two columns**: a title row (eyebrow, H1,
+rule and the lead paragraph) beside the photo, both roughly the same height, and the remaining
+three paragraphs plus the CTAs in a single `max-w-2xl` column underneath. Running the whole
+Eingangstext beside the photo leaves a large hole under it. For the same reason the `logo-wide`
+motif sits **bottom-right and only from `lg`** — in the top right it now collides with the photo.
+Keep an eye on the fold: at 1440×900 the „Termin anfragen“ button ends at ~875 px, so any extra
+copy or type size in the hero pushes the primary CTA out of view. **It is a stock/AI-looking image, not a photo of the practice or of either therapist**
 — keep the alt text neutral so it never reads as a therapist or a patient. The former hero photo
 `flur-hell.webp` moved into the `Raeumlichkeiten` gallery, which therefore runs
 `sm:grid-cols-2 lg:grid-cols-3` with three tiles.
