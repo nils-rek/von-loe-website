@@ -149,12 +149,15 @@ The two were **not shot at the same distance**: `isabelle_headshot.jpg` is used 
 size and at the same height in the card (hair top ≈ 12 %, chin ≈ 58 % of the frame). `object-cover`
 cannot fix that — it only pans, it cannot zoom — so re-crop the source if a headshot is replaced.
 
-`images/praxis-gespraech.webp` (576×720, 4:5, q82) is the hero photo added in iteration 5. It comes
-from the image embedded in `Homepage 0709.26.docx` (`word/media/image1.jpg`, 1280×720), cropped
-`(0,0,576,720)` — flush with the left edge, so the out-of-focus patient silhouette in the
-foreground stays in frame; a centred crop drops it. **It is a stock/AI-looking image, not a photo of the practice or of either
-therapist** — keep the alt text neutral so it never reads as a therapist or a patient. The former
-hero photo `flur-hell.webp` moved into the `Raeumlichkeiten` gallery, which therefore runs
+`images/praxis-gespraech.webp` (1280×720, q82) is the hero photo added in iteration 5 — the image
+embedded in `Homepage 0709.26.docx` (`word/media/image1.jpg`), **uncropped**. Every crop tried
+(4:5 centred, 4:5 flush left) either dropped the out-of-focus patient silhouette in the foreground
+or cut the therapist's arm, so the hero shows the full 16:9 frame: no fixed slot, no `object-cover`,
+just `w-full h-auto`. Because a 16:9 image gets too narrow in a half column, the hero grid only
+splits into two columns at **`lg`** — below that the photo stacks above the text at up to
+`max-w-md`. **It is a stock/AI-looking image, not a photo of the practice or of either therapist**
+— keep the alt text neutral so it never reads as a therapist or a patient. The former hero photo
+`flur-hell.webp` moved into the `Raeumlichkeiten` gallery, which therefore runs
 `sm:grid-cols-2 lg:grid-cols-3` with three tiles.
 
 ## Verifying UI changes (screenshots)

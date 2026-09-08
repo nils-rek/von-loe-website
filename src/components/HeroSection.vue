@@ -19,9 +19,9 @@
     </div>
 
     <div class="relative max-w-6xl mx-auto px-5 md:px-6 py-24 w-full">
-      <div class="grid md:grid-cols-[1.15fr_0.85fr] gap-12 md:gap-16 items-center">
+      <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center">
         <!-- Text -->
-        <div class="order-2 md:order-1">
+        <div class="order-2 lg:order-1">
           <p class="animate-hero-fade-in text-petrol-600 font-medium tracking-[0.18em] text-xs md:text-sm uppercase mb-4">
             Psychologische Psychotherapie in Heidelberg
           </p>
@@ -77,20 +77,22 @@
         </div>
 
         <!-- Photo -->
-        <div class="order-1 md:order-2 flex justify-center md:justify-end animate-hero-fade-in-4">
-          <div class="relative">
+        <div class="order-1 lg:order-2 flex justify-center lg:justify-end animate-hero-fade-in-4">
+          <!--
+            Das Foto laeuft ungeschnitten im Originalformat 16:9 – deshalb kein fester
+            Slot mit object-cover, sondern die natuerliche Hoehe des Bildes.
+          -->
+          <div class="relative w-full max-w-sm sm:max-w-md lg:max-w-none">
             <div class="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-moss-100 via-iris-100 to-petrol-100 opacity-70 blur-sm"></div>
-            <div class="w-64 sm:w-72 md:w-80 aspect-[4/5] rounded-2xl overflow-hidden shadow-xl shadow-petrol-900/10 ring-1 ring-black/5">
-              <img
-                src="/images/praxis-gespraech.webp"
-                alt="Ruhige Gesprächssituation in hellen Praxisräumen"
-                width="576"
-                height="720"
-                class="w-full h-full object-cover"
-                loading="eager"
-                fetchpriority="high"
-              />
-            </div>
+            <img
+              src="/images/praxis-gespraech.webp"
+              alt="Ruhige Gesprächssituation in hellen Praxisräumen"
+              width="1280"
+              height="720"
+              class="w-full h-auto rounded-2xl shadow-xl shadow-petrol-900/10 ring-1 ring-black/5"
+              loading="eager"
+              fetchpriority="high"
+            />
           </div>
         </div>
       </div>
