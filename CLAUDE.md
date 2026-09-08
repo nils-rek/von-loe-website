@@ -161,18 +161,14 @@ The two were **not shot at the same distance**: `isabelle_headshot.jpg` is used 
 size and at the same height in the card (hair top ≈ 12 %, chin ≈ 58 % of the frame). `object-cover`
 cannot fix that — it only pans, it cannot zoom — so re-crop the source if a headshot is replaced.
 
-`images/praxis-gespraech.webp` (1280×720, q82) is the hero photo added in iteration 5 — the image
-embedded in `Homepage 0709.26.docx` (`word/media/image1.jpg`), **uncropped**. Every crop tried
-(4:5 centred, 4:5 flush left) either dropped the out-of-focus patient silhouette in the foreground
-or cut the therapist's arm, so the hero shows the full 16:9 frame: no fixed slot, no `object-cover`,
-just `w-full h-auto`. Because a 16:9 image gets too narrow in a half column, the hero grid only
-splits into two columns at **`lg`** — below that the photo stacks above the text at up to
-`max-w-md`. The hero is laid out in **two blocks, not two columns**: a title row (eyebrow, H1,
-rule and the lead paragraph) beside the photo, both roughly the same height, and the remaining
-three paragraphs plus the CTAs in a single `max-w-2xl` column underneath. Running the whole
-Eingangstext beside the photo leaves a large hole under it. For the same reason the `logo-wide`
-motif sits **bottom-right and only from `lg`** — in the top right it now collides with the photo.
-Keep an eye on the fold: at 1440×900 the „Termin anfragen“ button ends at ~875 px, so any extra
+`images/praxis-gespraech.webp` (576×720, 4:5, q82) is the hero photo added in iteration 5. It comes
+from the image embedded in `Homepage 0709.26.docx` (`word/media/image1.jpg`, 1280×720), cropped
+**`(0,0,576,720)` — flush with the left edge**, so the out-of-focus patient silhouette in the
+foreground stays in frame; a centred crop drops it and the scene reads as a lone portrait. The
+uncropped 16:9 frame was tried and rejected: a landscape image beside the long Eingangstext is
+either tiny or leaves a large hole under it, and fixing that needed the whole hero restructured.
+The portrait keeps the plain side-by-side hero (text left, photo right from `md`, stacked below).
+Keep an eye on the fold: at 1440×900 the „Termin anfragen“ button ends at ~871 px, so any extra
 copy or type size in the hero pushes the primary CTA out of view. **It is a stock/AI-looking image, not a photo of the practice or of either therapist**
 — keep the alt text neutral so it never reads as a therapist or a patient. The former hero photo
 `flur-hell.webp` moved into the `Raeumlichkeiten` gallery, which therefore runs

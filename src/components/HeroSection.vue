@@ -13,20 +13,15 @@
         alt=""
         width="714"
         height="354"
-        class="hidden lg:block absolute bottom-20 right-6 xl:right-10 w-72 xl:w-80 opacity-40 animate-float"
+        class="absolute top-16 right-2 md:right-10 w-56 md:w-72 lg:w-80 opacity-40 animate-float"
         loading="eager"
       />
     </div>
 
     <div class="relative max-w-6xl mx-auto px-5 md:px-6 py-24 w-full">
-      <!--
-        Titelzeile: Ueberschrift und Eingangsabsatz links, Foto rechts – beide Bloecke sind
-        etwa gleich hoch. Ein 16:9-Bild neben der kompletten Textspalte liesse dagegen eine
-        grosse Leerflaeche stehen. Der restliche Eingangstext laeuft darunter in einer Spalte.
-      -->
-      <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-16 items-center">
-        <!-- Titel -->
-        <div class="order-2 lg:order-1">
+      <div class="grid md:grid-cols-[1.15fr_0.85fr] gap-12 md:gap-16 items-center">
+        <!-- Text -->
+        <div class="order-2 md:order-1">
           <p class="animate-hero-fade-in text-petrol-600 font-medium tracking-[0.18em] text-xs md:text-sm uppercase mb-4">
             Psychologische Psychotherapie in Heidelberg
           </p>
@@ -34,75 +29,69 @@
             Willkommen in unserer Praxis
           </h1>
           <div class="animate-hero-fade-in-2 accent-rule mb-6"></div>
-          <p class="animate-hero-fade-in-2 text-lg text-ink/75 leading-relaxed">
+          <p class="animate-hero-fade-in-2 text-lg text-ink/75 leading-relaxed mb-4 max-w-2xl">
             Menschen können in Situationen gelangen, in denen die bisherigen
             Bewältigungsmechanismen, die im Laufe des Lebens entstanden sind, nicht mehr gut
             helfen. Gleichzeitig stehen oft noch keine neuen Wege (i. S. von Fähigkeiten) zur
             Verfügung, was ein äußerst leidvoller Zustand sein kann. Gefühle wie Traurigkeit,
             Ängste aber auch Wut oder schließlich Resignation können vorherrschend sein.
           </p>
+          <p class="animate-hero-fade-in-2 text-base md:text-lg text-ink/70 leading-relaxed mb-4 max-w-2xl">
+            Sich Hilfe zu suchen und sich für eine Psychotherapie zu entscheiden, ist ein
+            mutiger Schritt. Denn Psychotherapie bedeutet die Bereitschaft, sich mit sich
+            selbst, seinen Problemen und inneren Konflikten auseinanderzusetzen.
+          </p>
+          <p class="animate-hero-fade-in-2 text-base md:text-lg text-ink/70 leading-relaxed mb-4 max-w-2xl">
+            Die Suche nach psychotherapeutischer Unterstützung ist aber meist mit
+            verschiedenen Fragen verbunden. Beispielsweise welches Therapieverfahren ist für
+            mich das richtige? Ist eine Einzel- oder Gruppentherapie sinnvoll?
+          </p>
+          <p class="animate-hero-fade-in-3 text-base md:text-lg text-ink/70 leading-relaxed mb-7 max-w-2xl">
+            In unserer Praxis bündeln wir zwei bewährte Therapieformen: tiefenpsychologisch
+            fundierte Psychotherapie und kognitive Verhaltenstherapie. Sie müssen nicht im
+            Voraus wissen, welcher Weg der richtige für Sie ist. Im Erstgespräch nehmen wir
+            uns Zeit für eine sorgfältige Diagnostik und Indikationsstellung. Gemeinsam
+            klären wir Ihre Anliegen und finden das Setting, das Sie bestmöglich auf Ihrem
+            Weg unterstützt.
+          </p>
+          <div class="animate-hero-fade-in-3 flex flex-col sm:flex-row gap-4">
+            <!--
+              TODO(Warteliste): Sobald ein Wartelisten-/Terminanbieter feststeht, führt dieser
+              Button dorthin statt zum Kontaktabschnitt (siehe Wartelisten.vue).
+            -->
+            <a
+              href="#kontakt"
+              class="inline-flex items-center justify-center px-7 py-3.5 bg-petrol-600 text-white font-medium rounded-lg shadow-sm hover:bg-petrol-700 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-petrol-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper-50"
+              @click.prevent="scrollTo('#kontakt')"
+            >
+              Termin anfragen
+            </a>
+            <a
+              href="#angebot"
+              class="inline-flex items-center justify-center px-7 py-3.5 border border-petrol-300 text-petrol-700 font-medium rounded-lg hover:bg-petrol-50 hover:border-petrol-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-petrol-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper-50"
+              @click.prevent="scrollTo('#angebot')"
+            >
+              Unser Angebot ansehen
+            </a>
+          </div>
         </div>
 
         <!-- Photo -->
-        <div class="order-1 lg:order-2 flex justify-center lg:justify-end animate-hero-fade-in-4">
-          <!--
-            Das Foto laeuft ungeschnitten im Originalformat 16:9 – deshalb kein fester
-            Slot mit object-cover, sondern die natuerliche Hoehe des Bildes.
-          -->
-          <div class="relative w-full max-w-sm sm:max-w-md lg:max-w-none">
+        <div class="order-1 md:order-2 flex justify-center md:justify-end animate-hero-fade-in-4">
+          <div class="relative">
             <div class="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-moss-100 via-iris-100 to-petrol-100 opacity-70 blur-sm"></div>
-            <img
-              src="/images/praxis-gespraech.webp"
-              alt="Ruhige Gesprächssituation in hellen Praxisräumen"
-              width="1280"
-              height="720"
-              class="w-full h-auto rounded-2xl shadow-xl shadow-petrol-900/10 ring-1 ring-black/5"
-              loading="eager"
-              fetchpriority="high"
-            />
+            <div class="w-64 sm:w-72 md:w-80 aspect-[4/5] rounded-2xl overflow-hidden shadow-xl shadow-petrol-900/10 ring-1 ring-black/5">
+              <img
+                src="/images/praxis-gespraech.webp"
+                alt="Ruhige Gesprächssituation in hellen Praxisräumen"
+                width="576"
+                height="720"
+                class="w-full h-full object-cover"
+                loading="eager"
+                fetchpriority="high"
+              />
+            </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Fliesstext -->
-      <div class="mt-10 lg:mt-12 max-w-2xl">
-        <p class="animate-hero-fade-in-2 text-base md:text-lg text-ink/70 leading-relaxed mb-4">
-          Sich Hilfe zu suchen und sich für eine Psychotherapie zu entscheiden, ist ein
-          mutiger Schritt. Denn Psychotherapie bedeutet die Bereitschaft, sich mit sich
-          selbst, seinen Problemen und inneren Konflikten auseinanderzusetzen.
-        </p>
-        <p class="animate-hero-fade-in-2 text-base md:text-lg text-ink/70 leading-relaxed mb-4">
-          Die Suche nach psychotherapeutischer Unterstützung ist aber meist mit
-          verschiedenen Fragen verbunden. Beispielsweise welches Therapieverfahren ist für
-          mich das richtige? Ist eine Einzel- oder Gruppentherapie sinnvoll?
-        </p>
-        <p class="animate-hero-fade-in-3 text-base md:text-lg text-ink/70 leading-relaxed mb-7">
-          In unserer Praxis bündeln wir zwei bewährte Therapieformen: tiefenpsychologisch
-          fundierte Psychotherapie und kognitive Verhaltenstherapie. Sie müssen nicht im
-          Voraus wissen, welcher Weg der richtige für Sie ist. Im Erstgespräch nehmen wir
-          uns Zeit für eine sorgfältige Diagnostik und Indikationsstellung. Gemeinsam
-          klären wir Ihre Anliegen und finden das Setting, das Sie bestmöglich auf Ihrem
-          Weg unterstützt.
-        </p>
-        <div class="animate-hero-fade-in-3 flex flex-col sm:flex-row gap-4">
-          <!--
-            TODO(Warteliste): Sobald ein Wartelisten-/Terminanbieter feststeht, führt dieser
-            Button dorthin statt zum Kontaktabschnitt (siehe Wartelisten.vue).
-          -->
-          <a
-            href="#kontakt"
-            class="inline-flex items-center justify-center px-7 py-3.5 bg-petrol-600 text-white font-medium rounded-lg shadow-sm hover:bg-petrol-700 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-petrol-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper-50"
-            @click.prevent="scrollTo('#kontakt')"
-          >
-            Termin anfragen
-          </a>
-          <a
-            href="#angebot"
-            class="inline-flex items-center justify-center px-7 py-3.5 border border-petrol-300 text-petrol-700 font-medium rounded-lg hover:bg-petrol-50 hover:border-petrol-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-petrol-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper-50"
-            @click.prevent="scrollTo('#angebot')"
-          >
-            Unser Angebot ansehen
-          </a>
         </div>
       </div>
     </div>
