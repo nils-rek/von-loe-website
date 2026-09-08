@@ -144,10 +144,15 @@ the OS FS tool, **not** ImageMagick). Keep explicit `width`/`height` on `<img>` 
 below-fold photos use `loading="lazy"`; the Team headshots are `loading="eager"` (native lazy was
 unreliable there). Both headshots are 640×797 WebP (q82) derived from the 912×1136 originals in
 `supporting_docs/` — the 0.8 aspect matches the `w-32 h-40` slot, so `object-cover` crops nothing.
+The two were **not shot at the same distance**: `isabelle_headshot.jpg` is used full-frame, while
+`andi_headshot.jpg` is cropped `(98,199,850,1136)` before the resize so both heads end up the same
+size and at the same height in the card (hair top ≈ 12 %, chin ≈ 58 % of the frame). `object-cover`
+cannot fix that — it only pans, it cannot zoom — so re-crop the source if a headshot is replaced.
 
 `images/praxis-gespraech.webp` (576×720, 4:5, q82) is the hero photo added in iteration 5. It comes
 from the image embedded in `Homepage 0709.26.docx` (`word/media/image1.jpg`, 1280×720), cropped
-`(288,0,864,720)`. **It is a stock/AI-looking image, not a photo of the practice or of either
+`(0,0,576,720)` — flush with the left edge, so the out-of-focus patient silhouette in the
+foreground stays in frame; a centred crop drops it. **It is a stock/AI-looking image, not a photo of the practice or of either
 therapist** — keep the alt text neutral so it never reads as a therapist or a patient. The former
 hero photo `flur-hell.webp` moved into the `Raeumlichkeiten` gallery, which therefore runs
 `sm:grid-cols-2 lg:grid-cols-3` with three tiles.
