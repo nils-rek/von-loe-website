@@ -42,8 +42,6 @@ public/
   → `src/views/Datenschutz.vue`
 - **Wartelisten-Formulare**: bestehende Formular-/Embed-Codes einsetzen
   → `src/components/Wartelisten.vue` (Suche nach `TODO(waitlist embed)` und `data-waitlist-embed`)
-- **Foto von Andreas von Loe**: als `public/images/andreas-von-loe.webp` ablegen und in
-  `src/components/Team.vue` bei Andreas `photo:` auf den Pfad setzen (aktuell Monogramm-Platzhalter)
 - Optional: aktualisiertes **Logo** (die gelieferte Datei trägt den Schriftzug
   „am Bismarckplatz“; aktuell wird nur die Pusteblumen-Marke verwendet)
 

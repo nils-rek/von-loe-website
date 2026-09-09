@@ -138,7 +138,7 @@ const people = [
     ],
     tagClass: 'bg-petrol-50 text-petrol-700',
     dotClass: 'bg-petrol-400',
-    photo: '/images/andreas-von-loe.webp',
+    photo: '/images/andreas-von-loe-v2.webp',
     intro:
       'Ich behandle Erwachsene kognitiv-verhaltenstherapeutisch und schematherapeutisch (aktuell in Schematherapie-Weiterbildung befindlich) – im Einzel- wie im Gruppensetting, konkret und gegenwartsbezogen. Berufserfahrung in Psychiatrie, Beratung und Praxis.',
     focus: [

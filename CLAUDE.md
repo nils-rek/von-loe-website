@@ -160,12 +160,19 @@ final logo, the full Eingangstext, the Räumlichkeiten copy, the hero photo and 
 Convert new images to WebP before adding (use Python + Pillow; note `convert` on this Windows box is
 the OS FS tool, **not** ImageMagick). Keep explicit `width`/`height` on `<img>` to avoid CLS. Large
 below-fold photos use `loading="lazy"`; the Team headshots are `loading="eager"` (native lazy was
-unreliable there). Both headshots are 640×797 WebP (q82) derived from the 912×1136 originals in
+unreliable there). Both headshots are 640×797 WebP (q82) derived from the originals in
 `supporting_docs/` — the 0.8 aspect matches the `w-32 h-40` slot, so `object-cover` crops nothing.
-The two were **not shot at the same distance**: `isabelle_headshot.jpg` is used full-frame, while
-`andi_headshot.jpg` is cropped `(98,199,850,1136)` before the resize so both heads end up the same
+The two were **not shot at the same distance**: `isabelle_headshot.jpg` (912×1136) is used
+full-frame, while `andi_headshot.jpg` is cropped before the resize so both heads end up the same
 size and at the same height in the card (hair top ≈ 12 %, chin ≈ 58 % of the frame). `object-cover`
 cannot fix that — it only pans, it cannot zoom — so re-crop the source if a headshot is replaced.
+`andi_headshot.jpg` was replaced in iteration 6 (same shot, different shirt) and came back at
+**864×1152** instead of 912×1136, so the old crop box no longer applied. Don't guess a new one:
+measure the dark hair bbox with numpy in the previously published WebP and in the new source, then
+solve for the crop that maps one onto the other (`W = 640 * Hw/hw`, `left = Hl - hl*W/640`,
+`top = Ht - ht*W/640`, `H = 797*W/640`). For the current file that gives `(88,240,818,1149)` and
+lands the head within 1 px of the old framing. The result ships as `images/andreas-von-loe-v2.webp`
+— new content, new filename, see the cache-bust note below.
 
 `images/praxis-gespraech-v2.webp` (576×720, 4:5, q82) is the hero photo added in iteration 5. It comes
 from the image embedded in `Homepage 0709.26.docx` (`word/media/image1.jpg`, 1280×720), cropped
