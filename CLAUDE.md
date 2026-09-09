@@ -137,13 +137,19 @@ Impressum, Datenschutz); the domain stays `psychotherapie-vonloe.de`. `favicon.s
 - **Gruppensitzungen**: duration is phrased vaguely in `Kosten.vue` (`TODO(Gruppensitzung)`).
 - **Ausfallregelung**: no Absagefrist/Ausfallhonorar stated (`TODO(Ausfallregelung)` in
   `Kosten.vue`) — add a fifth Rahmenbedingungen card once decided.
-- **Room photos**: `therapieraum`, `gruppenraum` and `gruppenraum-weit` are all the *same* room,
-  so `Raeumlichkeiten.vue` shows only one of them plus the two hallway shots. More rooms
-  (Einzelzimmer, Wartebereich) would let the gallery grow beyond three tiles.
+- **Room photos**: `therapieraum`, `gruppenraum` and `gruppenraum-weit` are all the *same* room.
+  Iteration 6 captions the large `therapieraum` shot „Gruppentherapieraum“ and therefore dropped
+  the redundant `gruppenraum-weit` tile from the gallery (the file stays in `public/images/`), so
+  the gallery is down to the two hallway shots. More rooms (Einzelzimmer, Wartebereich) would let
+  it grow again.
 
 Resolved in iteration 2: address, phone, the two role e-mail addresses
 (`tiefenpsychologie@` / `verhaltenstherapie@psychotherapie-vonloe.de`), telefonische
 Erreichbarkeit, both professional headshots.
+Iteration 6 added a third mailbox, `gruppentherapie@psychotherapie-vonloe.de` — it appears in
+`Kontakt.vue` and as Andreas' second address in `Team.vue`, but **deliberately not** on the
+Gruppentherapie card in `Therapieangebot.vue` (addresses belong in Kontakt, not in the Angebot
+cards) and not in Impressum or Datenschutz, which keep the two personal addresses.
 Resolved in iteration 4: the practice name, the Startseite welcome copy and the
 overall section structure — all from `supporting_docs/Homepage 05.09.26.docx`.
 Resolved in iteration 5 (from `supporting_docs/Homepage 0709.26.docx` and `logo-neu.png`): the
@@ -167,7 +173,16 @@ from the image embedded in `Homepage 0709.26.docx` (`word/media/image1.jpg`, 128
 foreground stays in frame; a centred crop drops it and the scene reads as a lone portrait. The
 uncropped 16:9 frame was tried and rejected: a landscape image beside the long Eingangstext is
 either tiny or leaves a large hole under it, and fixing that needed the whole hero restructured.
-The portrait keeps the plain side-by-side hero (text left, photo right from `md`, stacked below).
+The portrait keeps the plain side-by-side hero (text left, photo right from `md`, stacked below)
+— but only **from `md`**. Below that, iteration 6 serves the *uncropped* 16:9 original as
+`images/praxis-gespraech-wide.webp` (960×540, q82, plain resize of `supporting_docs/praxis-gespraech.jpg`,
+no crop): on a phone the 4:5 portrait sat above the headline and pushed it out of view. The hero
+switches between the two with a `<picture>`/`<source media="(min-width: 768px)">` so only one file
+is ever downloaded, and the frame carries `aspect-[16/9] md:aspect-[4/5]` so `object-cover` never
+crops at either breakpoint. Keep the two in sync: a new crop needs a matching frame ratio.
+The decorative `logo-wide` mark floating in the hero background is `hidden md:block` for the same
+reason: below `md` the photo band starts right under the nav, so the mark ended up behind it with
+only a few clipped seeds sticking out — on a phone the NavBar lockup is the header motif.
 The `-v2` in the filename is a cache-bust: on launch day the plain `praxis-gespraech.webp` URL
 served three different crops within an hour, and GitHub Pages sends `Cache-Control: max-age=600`,
 so visitors kept seeing a stale picture while the server already had the new one. **Give a
@@ -176,8 +191,9 @@ enough.
 Keep an eye on the fold: at 1440×900 the „Termin anfragen“ button ends at ~871 px, so any extra
 copy or type size in the hero pushes the primary CTA out of view. **It is a stock/AI-looking image, not a photo of the practice or of either therapist**
 — keep the alt text neutral so it never reads as a therapist or a patient. The former hero photo
-`flur-hell.webp` moved into the `Raeumlichkeiten` gallery, which therefore runs
-`sm:grid-cols-2 lg:grid-cols-3` with three tiles.
+`flur-hell.webp` moved into the `Raeumlichkeiten` gallery, which since iteration 6 runs
+`sm:grid-cols-2` with two tiles (see „Room photos“ above) — restore `lg:grid-cols-3` when a third
+motif exists.
 
 ## Verifying UI changes (screenshots)
 

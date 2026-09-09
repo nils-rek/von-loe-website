@@ -13,7 +13,8 @@
         <p class="mt-6 text-ink/70 leading-relaxed">
           Für ein erstes Kennenlernen oder Fragen zum Ablauf erreichen Sie uns telefonisch
           oder per E-Mail. Schreiben Sie gerne an die E-Mail-Adresse des Therapieverfahrens,
-          das Sie persönlich vorrangig anspricht. Wir melden uns zeitnah zurück.
+          das Sie persönlich vorrangig anspricht – oder direkt an die Adresse für die
+          Gruppentherapie. Wir melden uns zeitnah zurück.
         </p>
       </div>
 
@@ -112,6 +113,7 @@ const rightReveal = reveal({ delay: 120 })
 const mailboxes = [
   { label: 'E-Mail · Tiefenpsychologie (Dr. Isabelle von Loe)', address: 'tiefenpsychologie@psychotherapie-vonloe.de' },
   { label: 'E-Mail · Verhaltenstherapie (Andreas von Loe)', address: 'verhaltenstherapie@psychotherapie-vonloe.de' },
+  { label: 'E-Mail · Gruppentherapie', address: 'gruppentherapie@psychotherapie-vonloe.de' },
 ]
 
 const routes = [

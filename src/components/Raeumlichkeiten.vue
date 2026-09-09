@@ -18,17 +18,21 @@
 
       <!-- Text + Hauptbild -->
       <div class="grid md:grid-cols-2 gap-10 md:gap-14 items-center mb-12">
-        <div class="relative" v-bind="imageReveal">
-          <div class="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-br from-petrol-100 to-moss-100 opacity-60 blur-sm"></div>
-          <img
-            src="/images/therapieraum.webp"
-            alt="Heller Therapieraum mit Stuhlkreis, Fischgrätparkett und hohen Fenstern"
-            width="1066"
-            height="1600"
-            class="w-full h-72 md:h-[26rem] object-cover rounded-2xl shadow-lg shadow-petrol-900/5 ring-1 ring-black/5"
-            loading="lazy"
-          />
-        </div>
+        <figure v-bind="imageReveal">
+          <!-- Der Verlaufs-Glow bleibt im inneren Wrapper, damit er nicht unter die Bildunterschrift läuft. -->
+          <div class="relative">
+            <div class="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-br from-petrol-100 to-moss-100 opacity-60 blur-sm"></div>
+            <img
+              src="/images/therapieraum.webp"
+              alt="Heller Therapieraum mit Stuhlkreis, Fischgrätparkett und hohen Fenstern"
+              width="1066"
+              height="1600"
+              class="w-full h-72 md:h-[26rem] object-cover rounded-2xl shadow-lg shadow-petrol-900/5 ring-1 ring-black/5"
+              loading="lazy"
+            />
+          </div>
+          <figcaption class="mt-3 text-sm text-ink/55">Gruppentherapieraum</figcaption>
+        </figure>
 
         <div v-bind="textReveal">
           <h3 class="font-serif text-2xl font-semibold text-ink mb-4">
@@ -47,7 +51,7 @@
       </div>
 
       <!-- Galerie -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" v-bind="galleryReveal">
+      <div class="grid sm:grid-cols-2 gap-6" v-bind="galleryReveal">
         <figure v-for="p in gallery" :key="p.src">
           <img
             :src="p.src"
@@ -75,16 +79,10 @@ const textReveal = reveal({ delay: 120 })
 const galleryReveal = reveal({ delay: 60 })
 
 // Von den gelieferten Praxisfotos zeigen therapieraum / gruppenraum / gruppenraum-weit
-// denselben Raum. Deshalb hier nur ein Weitwinkel plus die beiden Flurmotive – sobald
-// weitere Räume fotografiert sind (Einzelzimmer, Wartebereich), kann die Galerie wachsen.
+// denselben Raum. Das große Bild oben ist als „Gruppentherapieraum“ beschriftet, deshalb
+// bleiben hier nur die beiden Flurmotive – sobald weitere Räume fotografiert sind
+// (Einzelzimmer, Wartebereich), kann die Galerie wieder wachsen (dann auch lg:grid-cols-3).
 const gallery = [
-  {
-    src: '/images/gruppenraum-weit.webp',
-    alt: 'Weiter Blick in den Gruppen- und Therapieraum mit hohen Fenstern und Altbaudecke',
-    caption: 'Gruppen- und Therapieraum',
-    width: 1600,
-    height: 1066,
-  },
   {
     src: '/images/flur-hell.webp',
     alt: 'Heller Flur der Praxis mit Fischgrätparkett und hohen Decken',

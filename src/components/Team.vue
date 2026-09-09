@@ -48,12 +48,17 @@
                 {{ p.method }}
               </span>
               <p class="mt-4 text-ink/70 leading-relaxed text-[0.95rem]">{{ p.intro }}</p>
-              <a
-                :href="`mailto:${p.email}`"
-                class="link-underline inline-block mt-3 text-sm text-petrol-600 hover:text-petrol-700 break-all"
-              >
-                {{ p.email }}
-              </a>
+              <div class="mt-3 space-y-1.5">
+                <div v-for="m in p.emails" :key="m.address">
+                  <span class="block text-xs text-ink/50">{{ m.hint }}</span>
+                  <a
+                    :href="`mailto:${m.address}`"
+                    class="link-underline text-sm text-petrol-600 hover:text-petrol-700 break-all"
+                  >
+                    {{ m.address }}
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -99,7 +104,7 @@ const people = [
     name: 'Dr. Isabelle von Loe',
     credentials: 'M.Sc. Psych. Dr. sc. hum. · Psychologische Psychotherapeutin (Approbation 2021) · Einzeltherapie für Erwachsene',
     method: 'Tiefenpsychologisch fundiert',
-    email: 'tiefenpsychologie@psychotherapie-vonloe.de',
+    emails: [{ hint: 'Einzeltherapie', address: 'tiefenpsychologie@psychotherapie-vonloe.de' }],
     tagClass: 'bg-moss-50 text-moss-700',
     dotClass: 'bg-moss-400',
     photo: '/images/isabelle-von-loe.webp',
@@ -127,7 +132,10 @@ const people = [
     name: 'Andreas von Loe',
     credentials: 'M.Sc. Psych. · Psychologischer Psychotherapeut (Approbation 2020) · Einzel- und Gruppentherapie für Erwachsene',
     method: 'Kognitive Verhaltenstherapie',
-    email: 'verhaltenstherapie@psychotherapie-vonloe.de',
+    emails: [
+      { hint: 'Einzeltherapie', address: 'verhaltenstherapie@psychotherapie-vonloe.de' },
+      { hint: 'Gruppentherapie', address: 'gruppentherapie@psychotherapie-vonloe.de' },
+    ],
     tagClass: 'bg-petrol-50 text-petrol-700',
     dotClass: 'bg-petrol-400',
     photo: '/images/andreas-von-loe.webp',

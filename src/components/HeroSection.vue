@@ -8,12 +8,17 @@
       <div class="absolute -top-24 -right-24 w-[34rem] h-[34rem] rounded-full bg-petrol-100/50 blur-3xl animate-float-slow"></div>
       <div class="absolute top-1/3 -left-24 w-[26rem] h-[26rem] rounded-full bg-moss-100/40 blur-3xl animate-float"></div>
       <div class="absolute -bottom-20 right-1/4 w-[22rem] h-[22rem] rounded-full bg-iris-100/40 blur-3xl animate-float-delayed"></div>
+      <!--
+        Nur ab md: darunter steht das Bildband direkt unter der Navigation, die Bildmarke
+        würde dahinter verschwinden und nur mit ein paar abgeschnittenen Samen herausragen.
+        Auf dem Handy übernimmt das Logo-Lockup der NavBar diese Rolle im Kopfbereich.
+      -->
       <img
         src="/images/logo-wide.webp"
         alt=""
         width="714"
         height="354"
-        class="absolute top-16 right-2 md:right-10 w-56 md:w-72 lg:w-80 opacity-40 animate-float"
+        class="hidden md:block absolute top-16 right-10 w-72 lg:w-80 opacity-40 animate-float"
         loading="eager"
       />
     </div>
@@ -29,7 +34,7 @@
             Willkommen in unserer Praxis
           </h1>
           <div class="animate-hero-fade-in-2 accent-rule mb-6"></div>
-          <p class="animate-hero-fade-in-2 text-lg text-ink/75 leading-relaxed mb-4 max-w-2xl">
+          <p class="animate-hero-fade-in-2 text-base md:text-lg text-ink/70 leading-relaxed mb-4 max-w-2xl">
             Menschen können in Situationen gelangen, in denen die bisherigen
             Bewältigungsmechanismen, die im Laufe des Lebens entstanden sind, nicht mehr gut
             helfen. Gleichzeitig stehen oft noch keine neuen Wege (i. S. von Fähigkeiten) zur
@@ -78,18 +83,32 @@
 
         <!-- Photo -->
         <div class="order-1 md:order-2 flex justify-center md:justify-end animate-hero-fade-in-4">
-          <div class="relative">
+          <div class="relative w-full md:w-auto">
             <div class="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-moss-100 via-iris-100 to-petrol-100 opacity-70 blur-sm"></div>
-            <div class="w-64 sm:w-72 md:w-80 aspect-[4/5] rounded-2xl overflow-hidden shadow-xl shadow-petrol-900/10 ring-1 ring-black/5">
-              <img
-                src="/images/praxis-gespraech-v2.webp"
-                alt="Ruhige Gesprächssituation in hellen Praxisräumen"
-                width="576"
-                height="720"
-                class="w-full h-full object-cover"
-                loading="eager"
-                fetchpriority="high"
-              />
+            <!--
+              Bis md das ungeschnittene 16:9-Original als flaches Band (ruhigerer mobiler
+              Einstieg, die Überschrift bleibt im sichtbaren Bereich), ab md der 4:5-Zuschnitt.
+              Die Container-Ratio entspricht je Breakpoint der Bild-Ratio – object-cover
+              schneidet daher in keiner Größe etwas weg.
+            -->
+            <div class="w-full max-w-md md:w-80 md:max-w-none aspect-[16/9] md:aspect-[4/5] rounded-2xl overflow-hidden shadow-xl shadow-petrol-900/10 ring-1 ring-black/5">
+              <picture>
+                <source
+                  media="(min-width: 768px)"
+                  srcset="/images/praxis-gespraech-v2.webp"
+                  width="576"
+                  height="720"
+                />
+                <img
+                  src="/images/praxis-gespraech-wide.webp"
+                  alt="Ruhige Gesprächssituation in hellen Praxisräumen"
+                  width="960"
+                  height="540"
+                  class="w-full h-full object-cover"
+                  loading="eager"
+                  fetchpriority="high"
+                />
+              </picture>
             </div>
           </div>
         </div>
