@@ -6,9 +6,10 @@ Guidance for Claude Code (claude.ai/code) when working in this repository.
 
 Website for **Psychotherapeutische Praxis von Loe** — a practice for psychological psychotherapy at
 Sofienstraße 13, 69115 Heidelberg, run by **Dr. Isabelle von Loe** (tiefenpsychologisch fundiert)
-and **Andreas von Loe** (Verhaltenstherapie & Schematherapie). Audience: gesetzlich Versicherte,
-Selektivverträge, Privatpatienten, Beihilfeberechtigte, Selbstzahler. **The "Privatpraxis" framing
-was dropped in iteration 2** — see the Kassenzulassung note under "Pending".
+and **Andreas von Loe** (Verhaltenstherapie & Schematherapie). Audience: Privatpatienten,
+Beihilfeberechtigte, Selbstzahler. **The "Privatpraxis" framing was dropped in iteration 2 and
+came back in iteration 7**, after the application for a Kassensitz failed — see the Kassenzulassung
+note under "Pending" for the flag that parks the GKV content.
 **All content is in German.** Deploys to **psychotherapie-vonloe.de** via GitHub Pages.
 
 This site deliberately mirrors the architecture of the sister site
@@ -41,6 +42,9 @@ views (plus a catch-all 404). `NavBar`/`FooterSection` links use a `goTo()` help
   `Wartelisten.vue` is **parked** — on disk but not mounted; its file header documents how to
   re-mount it once a waitlist provider is chosen.
 - `src/views/` — `HomePage`, `Impressum`, `Datenschutz`, `NotFound`
+- `src/config/praxis.js` — build-time flags for facts that can change (currently only
+  `KASSENZULASSUNG`, see "Pending" below). Components import the flag and pick between two text
+  variants; nothing is commented out.
 - `src/composables/useScrollReveal.js` — IntersectionObserver fade/slide-in; **skipped under
   `prefers-reduced-motion`**. Usage: `const { reveal } = useScrollReveal()` then
   `<div v-bind="reveal({ delay: 80 })">`.
@@ -111,11 +115,18 @@ Impressum, Datenschutz); the domain stays `psychotherapie-vonloe.de`. `favicon.s
 > really announced, work through this list; the `TODO(...)` comments in the components mark
 > every spot. Do not add new user-facing warning boxes — keep open items in `TODO` comments.
 
-- **Kassenzulassung** — the biggest open item. The site states that the practice bills the
-  gesetzliche Krankenkassen and mentions Selektivverträge, but this is *planned, not confirmed*.
-  `Kosten.vue` carries a `TODO(Kassenzulassung)` comment where the visible Hinweis box used to be;
-  `Ablauf.vue` has a matching TODO on the Antragsverfahren wording. Also: which Selektivverträge
-  actually apply.
+- **Kassenzulassung — resolved for now: the application for a Kassensitz was unsuccessful
+  (September 2026), so the site runs as a Privatpraxis.** All GKV content is *parked behind a
+  flag*, not deleted: `KASSENZULASSUNG` in `src/config/praxis.js`. Flipping it to `true` brings
+  back the hero headline without „Privat", the „Gesetzlich Versicherte" and „Selektivverträge"
+  cards in `Kosten.vue` and the Krankenkassen-Antrag as step 4 in `Ablauf.vue` — both text
+  variants live side by side in those files. Everything that does *not* hang on the flag and has
+  to be pulled back by hand — `index.html` meta/OG description, `FooterSection.vue` subtitle, the
+  parked `Wartelisten.vue`, the „Erstgespräch" wording that replaced the GKV term
+  „psychotherapeutische Sprechstunde" in `Ablauf.vue`/`Therapieangebot.vue`, and the 4 px hero
+  spacing trim that keeps the CTA above the fold with the now two-line headline — is listed as a
+  checklist in the doc comment of `praxis.js`; keep it current. Still open when the flag ever
+  flips: which Selektivverträge actually apply (`TODO(Selektivvertraege)`).
 - **Impressum** (`views/Impressum.vue`, `TODO(Impressum)`): the bracket placeholders are gone, but
   two of the three were **assumed, not confirmed** — Aufsichtsbehörde is written as
   „Regierungspräsidium Stuttgart“ (centrally responsible for Approbationen in BW) and the

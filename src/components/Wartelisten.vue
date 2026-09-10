@@ -12,6 +12,10 @@
        sowie den TODO(Warteliste)-Button im Hero (HeroSection.vue) umhaengen,
     4. den Abschnitt "Warteliste" in views/Datenschutz.vue wieder aufnehmen
        (siehe Git-Historie) und den genutzten Dienst dort benennen.
+
+  Hinweis: Die Aufzaehlung des Versicherungsstatus weiter unten ist auf die
+  Privatpraxis-Fassung gekuerzt. Kommt die Kassenzulassung (KASSENZULASSUNG in
+  src/config/praxis.js), gehoeren "gesetzlich" und "Selektivvertrag" dort wieder hinein.
 -->
 <template>
   <section id="wartelisten" class="py-24 md:py-32 bg-paper-100">
@@ -40,7 +44,7 @@
         <p class="text-sm text-ink/70 leading-relaxed">
           <span class="font-semibold text-ink">Für die Anmeldung erfassen wir:</span>
           Datum der Anfrage, Telefonnummer, E-Mail-Adresse, Ihren Versicherungsstatus
-          (gesetzlich / privat / Selbstzahler / Selektivvertrag) sowie wie Sie auf unsere
+          (privat / Beihilfe / Selbstzahler) sowie wie Sie auf unsere
           Praxis aufmerksam geworden sind. Hinweise zum Umgang mit Ihren Daten finden Sie in
           unserer
           <router-link to="/datenschutz" class="text-petrol-600 underline underline-offset-2 hover:text-petrol-700">

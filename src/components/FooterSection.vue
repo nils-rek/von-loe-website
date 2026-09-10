@@ -19,7 +19,7 @@
             />
           </div>
           <p class="text-sm text-paper-100/70 leading-relaxed max-w-xs">
-            Praxis für psychologische Psychotherapie in Heidelberg –
+            Privatpraxis für psychologische Psychotherapie in Heidelberg –
             Dr. Isabelle von Loe &amp; Andreas von Loe.
           </p>
         </div>

@@ -52,8 +52,8 @@
           </h3>
           <p class="text-ink/70 leading-relaxed">
             Beide Settings wirken, aber auf unterschiedliche Weise. Sie müssen sich vorab nicht
-            festlegen: Welche Form zu Ihrem Anliegen passt, klären wir gemeinsam in der
-            psychotherapeutischen Sprechstunde. Häufig ergänzen sich beide auch.
+            festlegen: Welche Form zu Ihrem Anliegen passt, klären wir gemeinsam im
+            Erstgespräch. Häufig ergänzen sich beide auch.
           </p>
         </div>
 

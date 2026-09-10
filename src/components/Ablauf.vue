@@ -21,13 +21,13 @@
         <!-- Was in der Sprechstunde passiert -->
         <div v-bind="textReveal">
           <h3 class="font-serif text-2xl font-semibold text-ink mb-4">
-            Was passiert in der psychotherapeutischen Sprechstunde?
+            Was passiert im ersten Gespräch?
           </h3>
           <p class="text-ink/70 leading-relaxed mb-4">
-            Die Sprechstunde ist der offizielle Einstieg in die ambulante Psychotherapie und
-            steht am Anfang jeder Behandlung. Sie dauert in der Regel 50 Minuten und ist noch
-            keine Therapie, sondern eine erste Orientierung: Wir hören zu, fragen nach und
-            verschaffen uns gemeinsam mit Ihnen ein Bild von Ihrer Situation.
+            Das Erstgespräch steht am Anfang jeder Behandlung. Es dauert in der Regel
+            50 Minuten und ist noch keine Therapie, sondern eine erste Orientierung: Wir
+            hören zu, fragen nach und verschaffen uns gemeinsam mit Ihnen ein Bild von
+            Ihrer Situation.
           </p>
           <p class="text-ink/70 leading-relaxed mb-4">
             Am Ende steht eine Einschätzung, ob eine Psychotherapie angezeigt ist – und wenn ja,
@@ -66,11 +66,24 @@
 
 <script setup>
 import { useScrollReveal } from '../composables/useScrollReveal'
+import { KASSENZULASSUNG } from '../config/praxis'
 
 const { reveal } = useScrollReveal()
 const headerReveal = reveal()
 const textReveal = reveal({ delay: 60 })
 const stepsReveal = reveal({ delay: 120 })
+
+// Der letzte Schritt unterscheidet sich je nach Zulassung; beide Fassungen bleiben stehen
+// und werden über KASSENZULASSUNG (src/config/praxis.js) ausgewählt.
+const antragGesetzlich = {
+  title: 'Antrag und Therapiebeginn',
+  text: 'Anschließend beantragen wir die Kostenübernahme bei Ihrer Krankenkasse bzw. Versicherung. Danach beginnt die eigentliche Therapie – im Einzelsetting oder in der Gruppe.',
+}
+
+const antragPrivat = {
+  title: 'Kostenzusage und Therapiebeginn',
+  text: 'Vor Beginn der Therapie holen Sie die Kostenzusage Ihrer privaten Krankenversicherung bzw. Beihilfestelle ein – die nötigen Unterlagen stellen wir Ihnen aus. Als Selbstzahlerin oder Selbstzahler entfällt dieser Schritt. Danach beginnt die eigentliche Therapie – im Einzelsetting oder in der Gruppe.',
+}
 
 const steps = [
   {
@@ -78,18 +91,13 @@ const steps = [
     text: 'Sie melden sich telefonisch zu unseren Sprechzeiten oder per E-Mail. Schreiben Sie gerne an die E-Mail-Adresse des Therapieverfahrens, das Sie persönlich vorrangig anspricht.',
   },
   {
-    title: 'Psychotherapeutische Sprechstunden',
+    title: 'Erstgespräche',
     text: 'Erste Gespräche, in denen wir Ihr Anliegen kennenlernen und gemeinsam einschätzen, ob und welche Behandlung sinnvoll ist. Hier erfolgt auch die Indikationsstellung für das passende Setting.',
   },
   {
     title: 'Probatorische Sitzungen',
     text: 'In mehreren Vorgesprächen prüfen wir, ob die Zusammenarbeit trägt. Dabei klären wir die Diagnose und legen gemeinsam die Ziele Ihrer Therapie fest.',
   },
-  {
-    // TODO(Kassenzulassung): Formulierung zum Antragsverfahren bestätigen, sobald die
-    // Abrechnung mit den gesetzlichen Krankenkassen feststeht.
-    title: 'Antrag und Therapiebeginn',
-    text: 'Anschließend beantragen wir die Kostenübernahme bei Ihrer Krankenkasse bzw. Versicherung. Danach beginnt die eigentliche Therapie – im Einzelsetting oder in der Gruppe.',
-  },
+  KASSENZULASSUNG ? antragGesetzlich : antragPrivat,
 ]
 </script>

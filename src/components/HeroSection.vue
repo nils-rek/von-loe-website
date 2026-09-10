@@ -27,13 +27,13 @@
       <div class="grid md:grid-cols-[1.15fr_0.85fr] gap-12 md:gap-16 items-center">
         <!-- Text -->
         <div class="order-2 md:order-1">
-          <p class="animate-hero-fade-in text-petrol-600 font-medium tracking-[0.18em] text-xs md:text-sm uppercase mb-4">
+          <p class="animate-hero-fade-in text-petrol-600 font-medium tracking-[0.18em] text-xs md:text-sm uppercase mb-3">
             Psychologische Psychotherapie in Heidelberg
           </p>
-          <h1 class="animate-hero-fade-in-1 font-serif text-4xl md:text-5xl font-semibold text-ink leading-[1.1] tracking-tight mb-5">
-            Willkommen in unserer Praxis
+          <h1 class="animate-hero-fade-in-1 font-serif text-4xl md:text-5xl font-semibold text-ink leading-[1.1] tracking-tight mb-4">
+            Willkommen in unserer {{ KASSENZULASSUNG ? 'Praxis' : 'Privatpraxis' }}
           </h1>
-          <div class="animate-hero-fade-in-2 accent-rule mb-6"></div>
+          <div class="animate-hero-fade-in-2 accent-rule mb-5"></div>
           <p class="animate-hero-fade-in-2 text-base md:text-lg text-ink/70 leading-relaxed mb-4 max-w-2xl">
             Menschen können in Situationen gelangen, in denen die bisherigen
             Bewältigungsmechanismen, die im Laufe des Lebens entstanden sind, nicht mehr gut
@@ -51,7 +51,7 @@
             verschiedenen Fragen verbunden. Beispielsweise welches Therapieverfahren ist für
             mich das richtige? Ist eine Einzel- oder Gruppentherapie sinnvoll?
           </p>
-          <p class="animate-hero-fade-in-3 text-base md:text-lg text-ink/70 leading-relaxed mb-7 max-w-2xl">
+          <p class="animate-hero-fade-in-3 text-base md:text-lg text-ink/70 leading-relaxed mb-6 max-w-2xl">
             In unserer Praxis bündeln wir zwei bewährte Therapieformen: tiefenpsychologisch
             fundierte Psychotherapie und kognitive Verhaltenstherapie. Sie müssen nicht im
             Voraus wissen, welcher Weg der richtige für Sie ist. Im Erstgespräch nehmen wir
@@ -131,6 +131,8 @@
 </template>
 
 <script setup>
+import { KASSENZULASSUNG } from '../config/praxis'
+
 function scrollTo(hash) {
   const el = document.querySelector(hash)
   if (el) el.scrollIntoView({ behavior: 'smooth' })
