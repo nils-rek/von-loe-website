@@ -116,6 +116,7 @@ const people = [
       'Essstörungen',
       'Postpartale Erkrankungen',
       'Belastung durch unerfüllten Kinderwunsch',
+      'Psychoonkologische Erkrankungen',
       'Trauer & Lebenskrisen',
     ],
     cv: [
@@ -146,7 +147,7 @@ const people = [
       'Persönlichkeitsstörungen',
       'Essstörungen',
       'Burnout & Stress',
-      'Psychoonkologie',
+      'Psychoonkologische Erkrankungen',
       'Trauma',
       'Trauer',
     ],
